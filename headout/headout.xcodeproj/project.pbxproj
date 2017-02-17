@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		346945E51E57B1B6007722CF /* URLList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346945E41E57B1B6007722CF /* URLList.swift */; };
+		346945E51E57B1B6007722CF /* VideoPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346945E41E57B1B6007722CF /* VideoPlayer.swift */; };
 		84BD4068D503EF30625F3F56 /* Pods_headout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6C20B71A5717D78F69FF83E /* Pods_headout.framework */; };
 		CDA185C21E570C4500A3D23B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA185C11E570C4500A3D23B /* AppDelegate.swift */; };
 		CDA185C41E570C4500A3D23B /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA185C31E570C4500A3D23B /* VideoViewController.swift */; };
@@ -49,7 +49,7 @@
 
 /* Begin PBXFileReference section */
 		164BFC1E1CD8D9B609B427A7 /* Pods_headoutTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_headoutTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		346945E41E57B1B6007722CF /* URLList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = URLList.swift; path = Models/URLList.swift; sourceTree = "<group>"; };
+		346945E41E57B1B6007722CF /* VideoPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoPlayer.swift; path = Models/VideoPlayer.swift; sourceTree = "<group>"; };
 		38543CED441E477A599B74D8 /* Pods-headout.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-headout.debug.xcconfig"; path = "Pods/Target Support Files/Pods-headout/Pods-headout.debug.xcconfig"; sourceTree = "<group>"; };
 		3CC6699620CC1DB9EF5B70D2 /* Pods-headoutTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-headoutTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-headoutTests/Pods-headoutTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A655B459E493C1E151228809 /* Pods-headoutUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-headoutUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-headoutUITests/Pods-headoutUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -124,7 +124,7 @@
 		346945E11E57B124007722CF /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				346945E41E57B1B6007722CF /* URLList.swift */,
+				346945E41E57B1B6007722CF /* VideoPlayer.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -532,7 +532,7 @@
 				CDA185C41E570C4500A3D23B /* VideoViewController.swift in Sources */,
 				CDA186031E578C6C00A3D23B /* Fonts.swift in Sources */,
 				CDA185C21E570C4500A3D23B /* AppDelegate.swift in Sources */,
-				346945E51E57B1B6007722CF /* URLList.swift in Sources */,
+				346945E51E57B1B6007722CF /* VideoPlayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

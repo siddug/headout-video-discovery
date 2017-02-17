@@ -11,7 +11,7 @@ import Player
 import YouTubePlayer
 import AVFoundation
 
-class VideoViewController: UIViewController, PlayerDelegate  {
+class VideoViewController: UIViewController  {
     let player: Player = Player()
 //    var youTubePlayer: YouTubePlayerView?
     
@@ -21,7 +21,15 @@ class VideoViewController: UIViewController, PlayerDelegate  {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        addPlayer()
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    func addPlayer() {
         player.delegate = self
         player.view.frame = view.bounds
         
@@ -32,32 +40,16 @@ class VideoViewController: UIViewController, PlayerDelegate  {
         player.fillMode = AVLayerVideoGravityResizeAspectFill
         player.bufferSize = 5
         
-        let url = NSURL(string: "http://res.cloudinary.com/dscs5qleu/video/upload/c_fill,h_1280,w_720/v1487353601/videoplayback_amdsji.mp4")
-        player.setUrl(url as! URL)
- 
-        
-//        youTubePlayer = YouTubePlayerView(frame: view.bounds)
-//        youTubePlayer?.delegate = self
-//        youTubePlayer?.loadVideoID("t4VASf8yeIU")
+        if let urlString = VideoPlayer.shared.getURLString(), let url = URL.init(string: urlString) {
+            player.setUrl(url)
+        }
     }
+}
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-//    func playerReady(_ videoPlayer: YouTubePlayerView) {
-//        print("ready to play")
-//        youTubePlayer?.play()
-//    }
-    
-    func playerStateChanged(_ videoPlayer: YouTubePlayerView, playerState: YouTubePlayerState) {
-        
-    }
-    
-    func playerQualityChanged(_ videoPlayer: YouTubePlayerView, playbackQuality: YouTubePlaybackQuality) {
-        
-    }
+// MARK:- Player Delegate
+extension VideoViewController: PlayerDelegate {
+    func playerStateChanged(_ videoPlayer: YouTubePlayerView, playerState: YouTubePlayerState) {}
+    func playerQualityChanged(_ videoPlayer: YouTubePlayerView, playbackQuality: YouTubePlaybackQuality) {}
     
     func playerReady(_ player: Player) {
         player.playFromBeginning()
@@ -68,11 +60,11 @@ class VideoViewController: UIViewController, PlayerDelegate  {
     }
     
     func playerBufferingStateDidChange(_ player: Player) {
-//        print(player.bufferingState)
+        //        print(player.bufferingState)
     }
     
     func playerCurrentTimeDidChange(_ player: Player) {
-//        print(player.currentTime)
+        //        print(player.currentTime)
     }
     
     func playerPlaybackWillStartFromBeginning(_ player: Player) {
@@ -83,9 +75,6 @@ class VideoViewController: UIViewController, PlayerDelegate  {
         print("playback end")
     }
     
-    func playerWillComeThroughLoop(_ player: Player) {
-        
-    }
-
+    func playerWillComeThroughLoop(_ player: Player) {}
 }
 

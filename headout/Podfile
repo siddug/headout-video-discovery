@@ -5,14 +5,20 @@ target 'headout' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
 
+# UI
+  pod 'Spring', :git => 'https://github.com/MengTo/Spring.git', :branch => 'swift3'
+# Networking
 #  pod 'AFNetworking'
 #  pod 'SwiftyJSON'
 #  pod 'Alamofire'
 #  pod 'ObjectMapper'
-  pod 'Spring', :git => 'https://github.com/MengTo/Spring.git', :branch => 'swift3'
+
+# Utilities
 #  pod 'Kingfisher'
 #  pod 'RxSwift'
 #  pod 'RxCocoa'
+
+# Video
   pod 'Player'
   pod 'YouTubePlayer'
 
