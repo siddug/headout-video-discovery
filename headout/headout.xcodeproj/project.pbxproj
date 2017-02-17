@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		346945E51E57B1B6007722CF /* URLList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346945E41E57B1B6007722CF /* URLList.swift */; };
 		84BD4068D503EF30625F3F56 /* Pods_headout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6C20B71A5717D78F69FF83E /* Pods_headout.framework */; };
 		CDA185C21E570C4500A3D23B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA185C11E570C4500A3D23B /* AppDelegate.swift */; };
-		CDA185C41E570C4500A3D23B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA185C31E570C4500A3D23B /* ViewController.swift */; };
+		CDA185C41E570C4500A3D23B /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA185C31E570C4500A3D23B /* VideoViewController.swift */; };
 		CDA185C71E570C4500A3D23B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDA185C51E570C4500A3D23B /* Main.storyboard */; };
 		CDA185C91E570C4500A3D23B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDA185C81E570C4500A3D23B /* Assets.xcassets */; };
 		CDA185CC1E570C4500A3D23B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDA185CA1E570C4500A3D23B /* LaunchScreen.storyboard */; };
@@ -48,6 +49,7 @@
 
 /* Begin PBXFileReference section */
 		164BFC1E1CD8D9B609B427A7 /* Pods_headoutTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_headoutTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		346945E41E57B1B6007722CF /* URLList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = URLList.swift; path = Models/URLList.swift; sourceTree = "<group>"; };
 		38543CED441E477A599B74D8 /* Pods-headout.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-headout.debug.xcconfig"; path = "Pods/Target Support Files/Pods-headout/Pods-headout.debug.xcconfig"; sourceTree = "<group>"; };
 		3CC6699620CC1DB9EF5B70D2 /* Pods-headoutTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-headoutTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-headoutTests/Pods-headoutTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A655B459E493C1E151228809 /* Pods-headoutUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-headoutUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-headoutUITests/Pods-headoutUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -56,7 +58,7 @@
 		C6C20B71A5717D78F69FF83E /* Pods_headout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_headout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDA185BE1E570C4500A3D23B /* headout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = headout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDA185C11E570C4500A3D23B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CDA185C31E570C4500A3D23B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CDA185C31E570C4500A3D23B /* VideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
 		CDA185C61E570C4500A3D23B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CDA185C81E570C4500A3D23B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CDA185CB1E570C4500A3D23B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -109,6 +111,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		346945E01E57B102007722CF /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				CDA185C81E570C4500A3D23B /* Assets.xcassets */,
+				CDA185CD1E570C4500A3D23B /* Info.plist */,
+				CDA186021E578C6B00A3D23B /* Fonts.swift */,
+			);
+			name = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		346945E11E57B124007722CF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				346945E41E57B1B6007722CF /* URLList.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		346945E21E57B12D007722CF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		346945E31E57B136007722CF /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				CDA185C31E570C4500A3D23B /* VideoViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
 		3F5EA02A19BD39D6E5849679 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -147,14 +182,14 @@
 		CDA185C01E570C4500A3D23B /* headout */ = {
 			isa = PBXGroup;
 			children = (
+				346945E31E57B136007722CF /* ViewControllers */,
+				346945E21E57B12D007722CF /* Views */,
+				346945E11E57B124007722CF /* Models */,
+				346945E01E57B102007722CF /* SupportingFiles */,
 				CDA185EF1E578C2900A3D23B /* Fonts */,
 				CDA185C11E570C4500A3D23B /* AppDelegate.swift */,
-				CDA185C31E570C4500A3D23B /* ViewController.swift */,
 				CDA185C51E570C4500A3D23B /* Main.storyboard */,
-				CDA185C81E570C4500A3D23B /* Assets.xcassets */,
 				CDA185CA1E570C4500A3D23B /* LaunchScreen.storyboard */,
-				CDA185CD1E570C4500A3D23B /* Info.plist */,
-				CDA186021E578C6B00A3D23B /* Fonts.swift */,
 			);
 			path = headout;
 			sourceTree = "<group>";
@@ -280,7 +315,7 @@
 				TargetAttributes = {
 					CDA185BD1E570C4400A3D23B = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = Z3D625WV84;
+						DevelopmentTeam = LBE8R7KQ3K;
 						ProvisioningStyle = Automatic;
 					};
 					CDA185D11E570C4500A3D23B = {
@@ -494,9 +529,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CDA185C41E570C4500A3D23B /* ViewController.swift in Sources */,
+				CDA185C41E570C4500A3D23B /* VideoViewController.swift in Sources */,
 				CDA186031E578C6C00A3D23B /* Fonts.swift in Sources */,
 				CDA185C21E570C4500A3D23B /* AppDelegate.swift in Sources */,
+				346945E51E57B1B6007722CF /* URLList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -648,7 +684,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = Z3D625WV84;
+				DEVELOPMENT_TEAM = LBE8R7KQ3K;
 				INFOPLIST_FILE = headout/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.headout.headout;
@@ -663,7 +699,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = Z3D625WV84;
+				DEVELOPMENT_TEAM = LBE8R7KQ3K;
 				INFOPLIST_FILE = headout/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.headout.headout;
