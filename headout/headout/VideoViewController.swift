@@ -15,26 +15,62 @@ import SafariServices
 class VideoViewController: UIViewController  {
     let player: Player = Player()
     
-    @IBOutlet var knowMoreButton: RoundBlackButton!
+    @IBOutlet var knowMoreButton: UIButton!
     @IBOutlet var wishlistButton: UIButton!
+    @IBOutlet var playButton: UIButton!
+    @IBOutlet var replayButton: BaseButton!
+    
+    @IBOutlet var blurrOverlay: UIView!
+    @IBOutlet var nextView: UIView!
+    
+    @IBOutlet var wishButtonRightConstraint: NSLayoutConstraint!
+    @IBOutlet var wishButtonTopConstraint: NSLayoutConstraint!
     
     @IBAction func knowMoreButtonTapped(_ sender: UIButton) {
-        // Know more Button Tap. Open web view
         let webVC = SFSafariViewController.init(url: NSURL(string: VideoPlayer.shared.getLinkUrl()!) as! URL)
         webVC.delegate = self
         self.present(webVC, animated: true, completion: nil)
         player.pause()
     }
     
+    @IBAction func replayButtonTapped(_ sender: UIButton) {
+        removeOverlayViews()
+        player.playFromBeginning()
+    }
+    
+    @IBAction func nextButtonTapped(_ sender: UIButton) {
+        skipButtonTapped(sender)
+    }
+    
+    func removeOverlayViews() {
+        blurrOverlay.isHidden = true
+        nextView.isHidden = true
+        playButton.isHidden = true
+        
+        wishButtonTopConstraint.constant = UIConstants.topSpaceForWishButton
+        wishButtonRightConstraint.constant = UIConstants.rightSpaceForWishButton
+        UIView.animate(withDuration: UIConstants.wishListMovementInterval) { [weak self] in
+            guard let strongSelf = self else {return}
+            strongSelf.view.layoutIfNeeded()
+        }
+    }
+    
     @IBAction func skipButtonTapped(_ sender: UIButton) {
-        // SKip Button Tap. play next video
         VideoPlayer.shared.playPosition += 1
+        removeOverlayViews()
         if let urlString = VideoPlayer.shared.getVideoUrl(), let url = URL.init(string: urlString) {
             player.setUrl(url)
+            wishlistButton.isSelected = VideoPlayer.shared.getWish().isHighlighted
         } else {
             // Open last page
         }
     }
+    
+    @IBAction func playButtonTapped(_ sender: UIButton) {
+        removeOverlayViews()
+        player.playFromCurrentTime()
+    }
+    
     @IBAction func wishlistButtonTapped(_ sender: UIButton) {
         // wishlistButtonTapped. Save to a db
         if VideoPlayer.shared.changeWish() {
@@ -49,11 +85,20 @@ class VideoViewController: UIViewController  {
     override func viewDidLoad() {
         super.viewDidLoad()
         addPlayer()
+        createBlurredView()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func createBlurredView() {
+        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.light)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.frame = blurrOverlay.bounds
+        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        blurrOverlay.addSubview(blurEffectView)
     }
     
     func addPlayer() {
@@ -63,7 +108,7 @@ class VideoViewController: UIViewController  {
         addChildViewController(player)
         view.addSubview(player.view)
         player.didMove(toParentViewController: self)
-        player.playbackLoops = true
+        player.playbackLoops = false
         player.fillMode = AVLayerVideoGravityResizeAspectFill
         player.bufferSize = VideoConstants.bufferSize
         
@@ -72,6 +117,15 @@ class VideoViewController: UIViewController  {
         if let urlString = VideoPlayer.shared.getVideoUrl(), let url = URL.init(string: urlString) {
             player.setUrl(url)
         }
+        
+        let tap = UITapGestureRecognizer.init(target: self, action: #selector(playerTap(_:)))
+        player.view.addGestureRecognizer(tap)
+    }
+    
+    func playerTap (_ sender: UITapGestureRecognizer) {
+        player.pause()
+        blurrOverlay.isHidden = false
+        playButton.isHidden = false
     }
 }
 
@@ -108,6 +162,15 @@ extension VideoViewController: PlayerDelegate {
     
     func playerPlaybackDidEnd(_ player: Player) {
         print("playback end")
+        blurrOverlay.isHidden = false
+        nextView.isHidden = false
+        wishButtonTopConstraint.constant = nextView.frame.minY + replayButton.frame.minY - UIConstants.offsetForTopConstraint
+        wishButtonRightConstraint.constant = nextView.frame.minX + nextView.center.x - UIConstants.centerDiffForReplayButtons + wishlistButton.bounds.width / 2
+        UIView.animate(withDuration: UIConstants.wishListMovementInterval) { [weak self] in
+            guard let strongSelf = self else {return}
+            strongSelf.view.layoutIfNeeded()
+        }
+        // moveWishlistButton
     }
     
     func playerWillComeThroughLoop(_ player: Player) {}
