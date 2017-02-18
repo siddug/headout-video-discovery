@@ -18,6 +18,7 @@
 		34D9B87B1E57CDEB0073DE57 /* RoundBlackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D9B87A1E57CDEB0073DE57 /* RoundBlackButton.swift */; };
 		34D9B87D1E57D3E20073DE57 /* BaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D9B87C1E57D3E20073DE57 /* BaseButton.swift */; };
 		84BD4068D503EF30625F3F56 /* Pods_headout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6C20B71A5717D78F69FF83E /* Pods_headout.framework */; };
+		CD47BC261E57E847002C5CEE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CD47BC251E57E847002C5CEE /* GoogleService-Info.plist */; };
 		CDA185C21E570C4500A3D23B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA185C11E570C4500A3D23B /* AppDelegate.swift */; };
 		CDA185C41E570C4500A3D23B /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA185C31E570C4500A3D23B /* VideoViewController.swift */; };
 		CDA185C71E570C4500A3D23B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDA185C51E570C4500A3D23B /* Main.storyboard */; };
@@ -74,6 +75,7 @@
 		B2FCA870360A954864CB261D /* Pods-headoutUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-headoutUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-headoutUITests/Pods-headoutUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		B7DB282D6C3B53996B69B45D /* Pods-headoutTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-headoutTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-headoutTests/Pods-headoutTests.release.xcconfig"; sourceTree = "<group>"; };
 		C6C20B71A5717D78F69FF83E /* Pods_headout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_headout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD47BC251E57E847002C5CEE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CDA185BE1E570C4500A3D23B /* headout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = headout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDA185C11E570C4500A3D23B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CDA185C31E570C4500A3D23B /* VideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 			children = (
 				CDA185C81E570C4500A3D23B /* Assets.xcassets */,
 				CDA185CD1E570C4500A3D23B /* Info.plist */,
+				CD47BC251E57E847002C5CEE /* GoogleService-Info.plist */,
 			);
 			name = SupportingFiles;
 			sourceTree = "<group>";
@@ -405,6 +408,7 @@
 				CDA185FF1E578C4400A3D23B /* Montserrat-Regular.otf in Resources */,
 				CDA185CC1E570C4500A3D23B /* LaunchScreen.storyboard in Resources */,
 				CDA185C91E570C4500A3D23B /* Assets.xcassets in Resources */,
+				CD47BC261E57E847002C5CEE /* GoogleService-Info.plist in Resources */,
 				CDA185C71E570C4500A3D23B /* Main.storyboard in Resources */,
 				CDA186001E578C4400A3D23B /* Montserrat-SemiBold.otf in Resources */,
 				CDA185FC1E578C4400A3D23B /* Montserrat-ExtraLight.otf in Resources */,

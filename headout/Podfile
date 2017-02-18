@@ -19,6 +19,9 @@ target 'headout' do
 #  pod 'RxSwift'
 #  pod 'RxCocoa'
 
+# Firebase
+pod 'Firebase/Core'
+
 # Video
   pod 'Player'
   pod 'YouTubePlayer'
