@@ -11,20 +11,21 @@ import Foundation
 class HeadoutVideo {
     var videoUrl: String
     var linkUrl: String
+    var isHighlighted: Bool
     
-    init(videoUrl: String, linkUrl: String) {
+    init(videoUrl: String, linkUrl: String, isHighlighted: Bool = false) {
         self.videoUrl = videoUrl
         self.linkUrl = linkUrl
+        self.isHighlighted = isHighlighted
+    }
+    
+    func change() {
+        isHighlighted = !isHighlighted
     }
 }
 
 class VideoPlayer {
     static let shared = VideoPlayer()
-
-    fileprivate init() {
-        wishlistArray = Array.init(repeating: Wish(), count: allUrlArray.count)
-        playingSaved = false
-    }
 
     let allUrlArray = [
         HeadoutVideo(videoUrl: "http://res.cloudinary.com/dscs5qleu/video/upload/c_fill,h_1280,w_720/v1487353601/videoplayback_amdsji.mp4", linkUrl: "https://www.headout.com/tour/512/united-states/new-york/wicked"),
@@ -51,17 +52,13 @@ class VideoPlayer {
     var playPosition = 0
     var playingSaved = false {
         didSet {
-            if playingSaved && wishlistArray != nil {
-                savedUrls = [HeadoutVideo]()
-                for (index, item) in wishlistArray.enumerated() {
-                    if item.isHighlighted {
-                        savedUrls.append(allUrlArray[index])
-                    }
-                }
+            if playingSaved {
+                savedUrls = allUrlArray.filter({ (video) -> Bool in
+                    video.isHighlighted
+                })
             }
         }
     }
-    var wishlistArray: [Wish]!
     
     func getVideoUrl() -> String? {
         if playPosition < urlArray.count {
@@ -79,24 +76,16 @@ class VideoPlayer {
     
     func changeWish() -> Bool {
         if playPosition < urlArray.count {
-            wishlistArray[playPosition].change()
+            urlArray[playPosition].change()
             return true
         }
         return false
     }
     
-    func getWish() -> Wish! {
+    func getWish() -> Bool {
         if playPosition < urlArray.count {
-            return wishlistArray[playPosition]
+            return urlArray[playPosition].isHighlighted
         }
-        return nil
-    }
-}
-
-struct Wish {
-    var isHighlighted = false
-    
-    mutating func change() {
-        isHighlighted = !isHighlighted
+        return false
     }
 }

@@ -50,10 +50,12 @@ class VideoViewController: UIViewController  {
         if !hamburgerButton.isSelected {
             hamburgerLeftConstraint.constant = UIConstants.leftSpaceForHamburger
             frostedSidebar.dismissAnimated(true, completion: nil)
+            playButtonTapped(playButton)
         } else {
             frostedSidebar.showInViewController( self, animated: true)
             view.bringSubview(toFront: hamburgerButton)
             hamburgerLeftConstraint.constant = SideBarConstants.width - hamburgerButton.bounds.width
+            playerTap(nil)
         }
         UIView.animate(withDuration: UIConstants.wishListMovementInterval) { [weak self] in
             guard let strongSelf = self else {return}
@@ -87,7 +89,7 @@ class VideoViewController: UIViewController  {
     @IBAction func wishlistButtonTapped(_ sender: UIButton) {
         // wishlistButtonTapped. Save to a db
         if VideoPlayer.shared.changeWish() {
-            sender.isSelected = VideoPlayer.shared.getWish().isHighlighted
+            sender.isSelected = VideoPlayer.shared.getWish()
             UIView.animate(withDuration: UIConstants.wishListMovementInterval) { [weak self] in
                 guard let strongSelf = self else {return}
                 strongSelf.view.layoutIfNeeded()
@@ -156,7 +158,7 @@ class VideoViewController: UIViewController  {
         player.view.addGestureRecognizer(tap)
     }
     
-    func playerTap (_ sender: UITapGestureRecognizer) {
+    func playerTap (_ sender: UITapGestureRecognizer?) {
         player.pause()
         view.layoutIfNeeded()
         UIView.animate(withDuration: UIConstants.wishListMovementInterval) { [weak self] in
@@ -186,10 +188,13 @@ class VideoViewController: UIViewController  {
         removeOverlayViews()
         if let urlString = VideoPlayer.shared.getVideoUrl(), let url = URL.init(string: urlString) {
             player.setUrl(url)
-            wishlistButton.isSelected = VideoPlayer.shared.getWish().isHighlighted
+            wishlistButton.isSelected = VideoPlayer.shared.getWish()
             toggleLastPage(show: false)
         } else {
             toggleLastPage(show: true)
+        }
+        if frostedSidebar.isCurrentlyOpen {
+            frostedSidebar.dismissAnimated(true, completion: nil)
         }
     }
     
