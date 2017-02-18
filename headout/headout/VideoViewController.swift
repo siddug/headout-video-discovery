@@ -72,36 +72,11 @@ class VideoViewController: UIViewController  {
     }
     
     @IBAction func playAgainButtonTapped(_ sender: UIButton) {
-        VideoPlayer.shared.playPosition = 0
-        playNewVideo()
+        replayCurrentList()
     }
-    
-    func removeOverlayViews() {
-        wishButtonTopConstraint.constant = UIConstants.topSpaceForWishButton
-        wishButtonRightConstraint.constant = UIConstants.rightSpaceForWishButton
-        view.layoutIfNeeded()
-        UIView.animate(withDuration: UIConstants.wishListMovementInterval) { [weak self] in
-            guard let strongSelf = self else {return}
-            strongSelf.blurrOverlay.alpha = 0
-            strongSelf.nextView.alpha = 0
-            strongSelf.playButton.alpha = 0
-        }
-    }
-    
-    @IBAction func skipButtonTapped(_ sender: UIButton) {
+        @IBAction func skipButtonTapped(_ sender: UIButton) {
         VideoPlayer.shared.playPosition = (VideoPlayer.shared.playPosition + 1)
         playNewVideo()
-    }
-    
-    func playNewVideo() {
-        removeOverlayViews()
-        if let urlString = VideoPlayer.shared.getVideoUrl(), let url = URL.init(string: urlString) {
-            player.setUrl(url)
-            wishlistButton.isSelected = VideoPlayer.shared.getWish().isHighlighted
-            toggleLastPage(show: false)
-        } else {
-            toggleLastPage(show: true)
-        }
     }
     
     @IBAction func playButtonTapped(_ sender: UIButton) {
@@ -135,8 +110,14 @@ class VideoViewController: UIViewController  {
     func addSideBar() {
         frostedSidebar = SideBarViewController.init(itemImages: SideBarConstants.imageArray, colors: SideBarConstants.colorArray, selectionStyle: .single)
         //        var frostedSidebar: FrostedSidebar = FrostedSidebar(images: SideBarConstants.imageArray, colors: SideBarConstants.colorArray, selection
-        for (index, _) in SideBarConstants.imageArray.enumerated() {
-            frostedSidebar.actionForIndex[index] = { /* actions */ }
+        
+        frostedSidebar.actionForIndex[0] = { [weak self] in
+            guard let strongSelf = self else {return}
+            strongSelf.replayAll()
+        }
+        frostedSidebar.actionForIndex[1] = { [weak self] in
+            guard let strongSelf = self else {return}
+            strongSelf.replaySavedItems()
         }
         frostedSidebar.delegate = self
     }
@@ -198,6 +179,45 @@ class VideoViewController: UIViewController  {
             view.sendSubview(toBack: hamburgerButton)
         } else {
             view.bringSubview(toFront: hamburgerButton)
+        }
+    }
+    
+    func playNewVideo() {
+        removeOverlayViews()
+        if let urlString = VideoPlayer.shared.getVideoUrl(), let url = URL.init(string: urlString) {
+            player.setUrl(url)
+            wishlistButton.isSelected = VideoPlayer.shared.getWish().isHighlighted
+            toggleLastPage(show: false)
+        } else {
+            toggleLastPage(show: true)
+        }
+    }
+    
+    func replayAll() {
+        VideoPlayer.shared.playingSaved = false
+        replayCurrentList()
+    }
+    
+    func replayCurrentList() {
+        VideoPlayer.shared.playPosition = 0
+        playNewVideo()
+    }
+    
+    func replaySavedItems() {
+        VideoPlayer.shared.playingSaved = true
+        VideoPlayer.shared.playPosition = 0
+        playNewVideo()
+    }
+    
+    func removeOverlayViews() {
+        wishButtonTopConstraint.constant = UIConstants.topSpaceForWishButton
+        wishButtonRightConstraint.constant = UIConstants.rightSpaceForWishButton
+        view.layoutIfNeeded()
+        UIView.animate(withDuration: UIConstants.wishListMovementInterval) { [weak self] in
+            guard let strongSelf = self else {return}
+            strongSelf.blurrOverlay.alpha = 0
+            strongSelf.nextView.alpha = 0
+            strongSelf.playButton.alpha = 0
         }
     }
 }

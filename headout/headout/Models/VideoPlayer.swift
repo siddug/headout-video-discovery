@@ -22,10 +22,11 @@ class VideoPlayer {
     static let shared = VideoPlayer()
 
     fileprivate init() {
-        wishlistArray = Array.init(repeating: Wish(), count: urlArray.count)
+        wishlistArray = Array.init(repeating: Wish(), count: allUrlArray.count)
+        playingSaved = false
     }
 
-    let urlArray = [
+    let allUrlArray = [
 //        HeadoutVideo(videoUrl: "http://res.cloudinary.com/dscs5qleu/video/upload/c_fill,h_1280,w_720/v1487353601/videoplayback_amdsji.mp4", linkUrl: "https://www.headout.com/tour/512/united-states/new-york/wicked"),
 //        HeadoutVideo(videoUrl: "http://res.cloudinary.com/dscs5qleu/video/upload/c_fill,h_1280,w_720/v1487373441/videoplayback_ui4yho.mp4", linkUrl: "https://www.headout.com/tour/515/united-states/new-york/matilda-the-musical"),
 //        HeadoutVideo(videoUrl: "http://res.cloudinary.com/dscs5qleu/video/upload/c_fill,h_1280,w_720/v1487374531/videoplayback_obylet.mp4", linkUrl: "https://www.headout.com/tour/517/united-states/new-york/the-phantom-of-the-opera"),
@@ -41,7 +42,25 @@ class VideoPlayer {
         HeadoutVideo(videoUrl: "http://res.cloudinary.com/dscs5qleu/video/upload/v1487383842/big_buck_bunny_720p_1mb_gefmrk.mp4", linkUrl: "https://www.headout.com")
     ]
     
+    var savedUrls = [HeadoutVideo]()
+    
+    var urlArray: [HeadoutVideo]! {
+        return playingSaved ? savedUrls : allUrlArray
+    }
+    
     var playPosition = 0
+    var playingSaved = false {
+        didSet {
+            if playingSaved && wishlistArray != nil {
+                savedUrls = [HeadoutVideo]()
+                for (index, item) in wishlistArray.enumerated() {
+                    if item.isHighlighted {
+                        savedUrls.append(allUrlArray[index])
+                    }
+                }
+            }
+        }
+    }
     var wishlistArray: [Wish]!
     
     func getVideoUrl() -> String? {
