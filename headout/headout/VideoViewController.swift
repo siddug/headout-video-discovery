@@ -156,6 +156,14 @@ class VideoViewController: UIViewController  {
         
         let tap = UITapGestureRecognizer.init(target: self, action: #selector(playerTap(_:)))
         player.view.addGestureRecognizer(tap)
+        
+        let rightSwipe = UISwipeGestureRecognizer.init(target: self, action: #selector(rightSwiped(_:)))
+        rightSwipe.direction = .left
+        player.view.addGestureRecognizer(rightSwipe)
+    }
+    
+    func rightSwiped (_ sender: UISwipeGestureRecognizer?) {
+        skipButtonTapped(knowMoreButton)
     }
     
     func playerTap (_ sender: UITapGestureRecognizer?) {
