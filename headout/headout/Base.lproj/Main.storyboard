@@ -73,11 +73,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0AU-ep-XZ7" userLabel="BlurrOverlay">
+                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0AU-ep-XZ7" userLabel="BlurrOverlay">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rhj-tt-Wk5" customClass="RoundBlackButton" customModule="headout" customModuleProvider="target">
+                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rhj-tt-Wk5" customClass="RoundBlackButton" customModule="headout" customModuleProvider="target">
                                 <rect key="frame" x="137" y="298.66666666666669" width="140" height="140"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Rhj-tt-Wk5" secondAttribute="height" multiplier="1:1" id="fs5-zB-Yzg"/>
@@ -88,7 +88,7 @@
                                     <action selector="playButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="R1s-7K-4TS"/>
                                 </connections>
                             </button>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dRv-Wl-ERR" userLabel="NextView">
+                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dRv-Wl-ERR" userLabel="NextView">
                                 <rect key="frame" x="0.0" y="303.33333333333331" width="414" height="130"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tFi-dD-XZR" customClass="BaseButton" customModule="headout" customModuleProvider="target">
@@ -127,6 +127,7 @@
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vz8-b8-d08" customClass="BaseButton" customModule="headout" customModuleProvider="target">
                                 <rect key="frame" x="328" y="50" width="45" height="40"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="3rA-Q1-BLV"/>
                                     <constraint firstAttribute="width" constant="45" id="ReD-JI-SqX"/>
@@ -138,6 +139,20 @@
                                 <state key="focused" image="wishlist"/>
                                 <connections>
                                     <action selector="wishlistButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RKd-sC-IYr"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9od-LE-8pU" customClass="BaseButton" customModule="headout" customModuleProvider="target">
+                                <rect key="frame" x="41" y="47.666666666666671" width="45" height="45.000000000000014"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="9od-LE-8pU" secondAttribute="height" multiplier="1:1" id="5R2-ge-MF2"/>
+                                    <constraint firstAttribute="width" constant="45" id="nb9-Bq-d8V"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
+                                <state key="normal" image="hamburger"/>
+                                <state key="selected" image="closeSideBar"/>
+                                <connections>
+                                    <action selector="hamburgerButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RBF-IB-mMh"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QHT-dS-OiB" customClass="RoundBlackButton" customModule="headout" customModuleProvider="target">
@@ -153,6 +168,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="60r-qX-W0u" customClass="RoundBlackButton" customModule="headout" customModuleProvider="target">
                                 <rect key="frame" x="372" y="677" width="63" height="42"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="63" id="9py-LB-XCQ"/>
                                 </constraints>
@@ -167,7 +183,8 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="REGISTER FOR ALERTS OR COME BACK LATER FOR MORE" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pMB-26-8Z6" userLabel="RegisterLabel">
-                                <rect key="frame" x="57" y="38" width="300" height="60"/>
+                                <rect key="frame" x="57" y="65" width="300" height="60"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="6UP-R1-g3h"/>
                                     <constraint firstAttribute="height" constant="60" id="RzH-A3-SEQ"/>
@@ -177,11 +194,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kt0-77-js4" userLabel="RegisterAlertsButton" customClass="RoundBlackButton" customModule="headout">
-                                <rect key="frame" x="107" y="293" width="200" height="30"/>
+                                <rect key="frame" x="57" y="293" width="300" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="DX6-oX-14I"/>
+                                    <constraint firstAttribute="width" constant="300" id="DX6-oX-14I"/>
                                 </constraints>
-                                <state key="normal" title="ALERTS"/>
+                                <state key="normal" title="REGISTER FOR ALERTS"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yRK-XW-Nhm" userLabel="PlayAgainButton" customClass="RoundBlackButton" customModule="headout">
                                 <rect key="frame" x="107" y="413" width="200" height="30"/>
@@ -189,11 +206,14 @@
                                     <constraint firstAttribute="width" constant="200" id="Oen-WY-pt9"/>
                                 </constraints>
                                 <state key="normal" title="PLAY AGAIN"/>
+                                <connections>
+                                    <action selector="playAgainButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fVD-N3-0us"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="pMB-26-8Z6" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-300" id="2Wa-PE-jSR"/>
+                            <constraint firstItem="9od-LE-8pU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="21" id="26t-oE-zek"/>
                             <constraint firstItem="Rhj-tt-Wk5" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="3aj-8P-M0n"/>
                             <constraint firstItem="QHT-dS-OiB" firstAttribute="height" secondItem="60r-qX-W0u" secondAttribute="height" id="6U3-V1-npd"/>
                             <constraint firstItem="Rhj-tt-Wk5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9db-qa-N37"/>
@@ -203,6 +223,7 @@
                             <constraint firstItem="dRv-Wl-ERR" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="Iza-oD-VHQ"/>
                             <constraint firstItem="Kt0-77-js4" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-60" id="JnA-BQ-2KN"/>
                             <constraint firstItem="dRv-Wl-ERR" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Mb0-JI-wdy"/>
+                            <constraint firstItem="pMB-26-8Z6" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="45" id="OTB-bS-Rf2"/>
                             <constraint firstItem="yRK-XW-Nhm" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="60" id="Ur2-g1-0xn"/>
                             <constraint firstItem="60r-qX-W0u" firstAttribute="centerY" secondItem="QHT-dS-OiB" secondAttribute="centerY" id="Xer-BX-Z2o"/>
                             <constraint firstItem="dRv-Wl-ERR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cCa-cd-0BJ"/>
@@ -210,6 +231,7 @@
                             <constraint firstItem="0AU-ep-XZ7" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="hjD-pf-TkL"/>
                             <constraint firstItem="0AU-ep-XZ7" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="j3j-6g-9bh"/>
                             <constraint firstItem="QHT-dS-OiB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mc1-IE-Bfs"/>
+                            <constraint firstItem="9od-LE-8pU" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="27.666666666666671" id="nE7-Qv-Nwm"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="QHT-dS-OiB" secondAttribute="bottom" constant="17" id="nZj-5L-vhA"/>
                             <constraint firstItem="0AU-ep-XZ7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pQS-zS-Qbd"/>
                             <constraint firstItem="pMB-26-8Z6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="uOW-bh-Z0Z"/>
@@ -219,6 +241,8 @@
                     </view>
                     <connections>
                         <outlet property="blurrOverlay" destination="0AU-ep-XZ7" id="r3g-dw-dbB"/>
+                        <outlet property="hamburgerButton" destination="9od-LE-8pU" id="O7M-Nh-l8h"/>
+                        <outlet property="hamburgerLeftConstraint" destination="26t-oE-zek" id="GLg-rw-Iku"/>
                         <outlet property="knowMoreButton" destination="QHT-dS-OiB" id="sDE-PK-Mhe"/>
                         <outlet property="lastPageBG" destination="lCM-iN-Yta" id="WPc-j6-b3Z"/>
                         <outlet property="lastPageLabel" destination="pMB-26-8Z6" id="Zas-ep-wFH"/>
@@ -238,6 +262,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="closeSideBar" width="51" height="50"/>
+        <image name="hamburger" width="41" height="27"/>
         <image name="launchScreenImage" width="266" height="400"/>
         <image name="notInWishlist" width="47" height="42"/>
         <image name="replay" width="36" height="34"/>

@@ -11,6 +11,7 @@ import Player
 import YouTubePlayer
 import AVFoundation
 import SafariServices
+import FrostedSidebar
 
 class VideoViewController: UIViewController  {
     let player: Player = Player()
@@ -28,8 +29,12 @@ class VideoViewController: UIViewController  {
     @IBOutlet var blurrOverlay: UIView!
     @IBOutlet var nextView: UIView!
     
+    @IBOutlet var hamburgerButton: UIButton!
     @IBOutlet var wishButtonRightConstraint: NSLayoutConstraint!
     @IBOutlet var wishButtonTopConstraint: NSLayoutConstraint!
+    @IBOutlet var hamburgerLeftConstraint: NSLayoutConstraint!
+    
+    var frostedSidebar: SideBarViewController!
     
     @IBAction func knowMoreButtonTapped(_ sender: UIButton) {
         if let urlString = VideoPlayer.shared.getLinkUrl(), let url = URL.init(string: urlString) {
@@ -37,6 +42,23 @@ class VideoViewController: UIViewController  {
             webVC.delegate = self
             self.present(webVC, animated: true, completion: nil)
             player.pause()
+        }
+    }
+    
+    @IBAction func hamburgerButtonTapped(_ sender: UIButton) {
+        hamburgerButton.isSelected = !hamburgerButton.isSelected
+        if !hamburgerButton.isSelected {
+            hamburgerLeftConstraint.constant = UIConstants.leftSpaceForHamburger
+            frostedSidebar.dismissAnimated(true, completion: nil)
+        } else {
+            frostedSidebar.showInViewController( self, animated: true)
+            view.bringSubview(toFront: hamburgerButton)
+            hamburgerLeftConstraint.constant = SideBarConstants.width - hamburgerButton.bounds.width
+        }
+        UIView.animate(withDuration: UIConstants.wishListMovementInterval) { [weak self] in
+            guard let strongSelf = self else {return}
+            strongSelf.view.bringSubview(toFront: strongSelf.hamburgerButton)
+            strongSelf.view.layoutIfNeeded()
         }
     }
     
@@ -49,25 +71,34 @@ class VideoViewController: UIViewController  {
         skipButtonTapped(sender)
     }
     
+    @IBAction func playAgainButtonTapped(_ sender: UIButton) {
+        VideoPlayer.shared.playPosition = 0
+        playNewVideo()
+    }
+    
     func removeOverlayViews() {
-        blurrOverlay.isHidden = true
-        nextView.isHidden = true
-        playButton.isHidden = true
-        
         wishButtonTopConstraint.constant = UIConstants.topSpaceForWishButton
         wishButtonRightConstraint.constant = UIConstants.rightSpaceForWishButton
+        view.layoutIfNeeded()
         UIView.animate(withDuration: UIConstants.wishListMovementInterval) { [weak self] in
             guard let strongSelf = self else {return}
-            strongSelf.view.layoutIfNeeded()
+            strongSelf.blurrOverlay.alpha = 0
+            strongSelf.nextView.alpha = 0
+            strongSelf.playButton.alpha = 0
         }
     }
     
     @IBAction func skipButtonTapped(_ sender: UIButton) {
-        VideoPlayer.shared.playPosition += 1
+        VideoPlayer.shared.playPosition = (VideoPlayer.shared.playPosition + 1)
+        playNewVideo()
+    }
+    
+    func playNewVideo() {
         removeOverlayViews()
         if let urlString = VideoPlayer.shared.getVideoUrl(), let url = URL.init(string: urlString) {
             player.setUrl(url)
             wishlistButton.isSelected = VideoPlayer.shared.getWish().isHighlighted
+            toggleLastPage(show: false)
         } else {
             toggleLastPage(show: true)
         }
@@ -82,6 +113,10 @@ class VideoViewController: UIViewController  {
         // wishlistButtonTapped. Save to a db
         if VideoPlayer.shared.changeWish() {
             sender.isSelected = VideoPlayer.shared.getWish().isHighlighted
+            UIView.animate(withDuration: UIConstants.wishListMovementInterval) { [weak self] in
+                guard let strongSelf = self else {return}
+                strongSelf.view.layoutIfNeeded()
+            }
         }
     }
     
@@ -93,9 +128,19 @@ class VideoViewController: UIViewController  {
         super.viewDidLoad()
         toggleLastPage(show: false)
         addPlayer()
+        addSideBar()
         createBlurredView()
     }
 
+    func addSideBar() {
+        frostedSidebar = SideBarViewController.init(itemImages: SideBarConstants.imageArray, colors: SideBarConstants.colorArray, selectionStyle: .single)
+        //        var frostedSidebar: FrostedSidebar = FrostedSidebar(images: SideBarConstants.imageArray, colors: SideBarConstants.colorArray, selection
+        for (index, _) in SideBarConstants.imageArray.enumerated() {
+            frostedSidebar.actionForIndex[index] = { /* actions */ }
+        }
+        frostedSidebar.delegate = self
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -132,15 +177,28 @@ class VideoViewController: UIViewController  {
     
     func playerTap (_ sender: UITapGestureRecognizer) {
         player.pause()
-        blurrOverlay.isHidden = false
-        playButton.isHidden = false
+        view.layoutIfNeeded()
+        UIView.animate(withDuration: UIConstants.wishListMovementInterval) { [weak self] in
+            guard let strongSelf = self else {return}
+            strongSelf.blurrOverlay.alpha = 1.0
+            strongSelf.playButton.alpha = 1.0
+            strongSelf.nextView.alpha = 0
+        }
+//        blurrOverlay.isHidden = false
+//        playButton.isHidden = false
     }
     
     func toggleLastPage(show: Bool) {
+        removeOverlayViews()
         lastPageLabel.isHidden = !show
         registerBUtton.isHidden = !show
         playAgainButton.isHidden = !show
         lastPageBG.isHidden = !show
+        if (show) {
+            view.sendSubview(toBack: hamburgerButton)
+        } else {
+            view.bringSubview(toFront: hamburgerButton)
+        }
     }
 }
 
@@ -178,17 +236,32 @@ extension VideoViewController: PlayerDelegate {
     
     func playerPlaybackDidEnd(_ player: Player) {
         print("playback end")
-        blurrOverlay.isHidden = false
-        nextView.isHidden = false
         wishButtonTopConstraint.constant = nextView.frame.minY + replayButton.frame.minY - UIConstants.offsetForTopConstraint
         wishButtonRightConstraint.constant = nextView.frame.minX + nextView.center.x - UIConstants.centerDiffForReplayButtons + wishlistButton.bounds.width / 2
+        view.layoutIfNeeded()
         UIView.animate(withDuration: UIConstants.wishListMovementInterval) { [weak self] in
             guard let strongSelf = self else {return}
-            strongSelf.view.layoutIfNeeded()
+            strongSelf.blurrOverlay.alpha = 1.0
+            strongSelf.nextView.alpha = 1.0
+            strongSelf.playButton.alpha = 0
         }
-        // moveWishlistButton
     }
     
     func playerWillComeThroughLoop(_ player: Player) {}
+}
+
+// MARK:- Player Delegate
+extension VideoViewController: FrostedSidebarDelegate {
+    func sidebar(_ sidebar: FrostedSidebar, willShowOnScreenAnimated animated: Bool){}
+    func sidebar(_ sidebar: FrostedSidebar, didShowOnScreenAnimated animated: Bool){}
+    func sidebar(_ sidebar: FrostedSidebar, willDismissFromScreenAnimated animated: Bool) {
+        if hamburgerButton.isSelected && frostedSidebar.isCurrentlyOpen {
+            hamburgerButtonTapped(hamburgerButton)
+        }
+    }
+    
+    func sidebar(_ sidebar: FrostedSidebar, didDismissFromScreenAnimated animated: Bool){}
+    func sidebar(_ sidebar: FrostedSidebar, didTapItemAtIndex index: Int){}
+    func sidebar(_ sidebar: FrostedSidebar, didEnable itemEnabled: Bool, itemAtIndex index: Int){}
 }
 
