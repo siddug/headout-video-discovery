@@ -81,11 +81,20 @@ class VideoViewController: UIViewController  {
     override func viewDidLoad() {
         super.viewDidLoad()
         addPlayer()
+        createBlurredView()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func createBlurredView() {
+        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.regular)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.frame = blurrOverlay.bounds
+        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        blurrOverlay.addSubview(blurEffectView)
     }
     
     func addPlayer() {
