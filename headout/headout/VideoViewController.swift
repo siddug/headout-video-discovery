@@ -10,6 +10,7 @@ import UIKit
 import Player
 import YouTubePlayer
 import AVFoundation
+import SafariServices
 
 class VideoViewController: UIViewController  {
     let player: Player = Player()
@@ -19,8 +20,12 @@ class VideoViewController: UIViewController  {
     
     @IBAction func knowMoreButtonTapped(_ sender: UIButton) {
         // Know more Button Tap. Open web view
-        
+        let webVC = SFSafariViewController.init(url: NSURL(string: VideoPlayer.shared.getLinkUrl()!) as! URL)
+        webVC.delegate = self
+        self.present(webVC, animated: true, completion: nil)
+        player.pause()
     }
+    
     @IBAction func skipButtonTapped(_ sender: UIButton) {
         // SKip Button Tap. play next video
         VideoPlayer.shared.playPosition += 1
@@ -67,6 +72,12 @@ class VideoViewController: UIViewController  {
         if let urlString = VideoPlayer.shared.getVideoUrl(), let url = URL.init(string: urlString) {
             player.setUrl(url)
         }
+    }
+}
+
+extension VideoViewController: SFSafariViewControllerDelegate {
+    func safariViewControllerDidFinish(_ controller: SFSafariViewController) {
+        player.playFromCurrentTime()
     }
 }
 
