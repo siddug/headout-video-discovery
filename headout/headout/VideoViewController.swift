@@ -40,7 +40,7 @@ class VideoViewController: UIViewController  {
         player.fillMode = AVLayerVideoGravityResizeAspectFill
         player.bufferSize = VideoConstants.bufferSize
         
-        if let urlString = VideoPlayer.shared.getURLString(), let url = URL.init(string: urlString) {
+        if let urlString = VideoPlayer.shared.getVideoUrl(), let url = URL.init(string: urlString) {
             player.setUrl(url)
         }
     }
