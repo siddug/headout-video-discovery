@@ -15,6 +15,11 @@ import SafariServices
 class VideoViewController: UIViewController  {
     let player: Player = Player()
     
+    @IBOutlet var lastPageLabel: UILabel!
+    @IBOutlet var registerBUtton: RoundBlackButton!
+    @IBOutlet var playAgainButton: RoundBlackButton!
+    @IBOutlet var lastPageBG: UIImageView!
+    
     @IBOutlet var knowMoreButton: UIButton!
     @IBOutlet var wishlistButton: UIButton!
     @IBOutlet var playButton: UIButton!
@@ -64,7 +69,7 @@ class VideoViewController: UIViewController  {
             player.setUrl(url)
             wishlistButton.isSelected = VideoPlayer.shared.getWish().isHighlighted
         } else {
-            // Open last page
+            toggleLastPage(show: true)
         }
     }
     
@@ -86,6 +91,7 @@ class VideoViewController: UIViewController  {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        toggleLastPage(show: false)
         addPlayer()
         createBlurredView()
     }
@@ -128,6 +134,13 @@ class VideoViewController: UIViewController  {
         player.pause()
         blurrOverlay.isHidden = false
         playButton.isHidden = false
+    }
+    
+    func toggleLastPage(show: Bool) {
+        lastPageLabel.isHidden = !show
+        registerBUtton.isHidden = !show
+        playAgainButton.isHidden = !show
+        lastPageBG.isHidden = !show
     }
 }
 
