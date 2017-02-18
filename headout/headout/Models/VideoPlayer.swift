@@ -36,11 +36,11 @@ class VideoPlayer {
         HeadoutVideo(videoUrl: "http://res.cloudinary.com/dscs5qleu/video/upload/c_fill,g_center,h_1280,w_720/v1487375084/videoplayback_nsrxka.mp4", linkUrl: "https://www.headout.com/tour/4548/united-states/new-york/the-glass-menagerie"),
         HeadoutVideo(videoUrl: "http://res.cloudinary.com/dscs5qleu/video/upload/c_fill,h_1280,w_720/v1487375265/videoplayback_naggi8.mp4", linkUrl: "https://www.headout.com/tour/519/united-states/new-york/chicago"),
         HeadoutVideo(videoUrl: "http://res.cloudinary.com/dscs5qleu/video/upload/c_fill,h_1280,w_720/v1487375655/videoplayback_tsrez2.mp4", linkUrl: "https://www.headout.com/tour/765/united-states/las-vegas/michael-jackson-one-by-cirque-du-soleil?stage=content"), // LV video
-        HeadoutVideo(videoUrl: "http://res.cloudinary.com/dscs5qleu/video/upload/c_fill,h_1280,w_720/v1487375818/videoplayback_awa49f.mp4", linkUrl: "https://www.headout.com/tour/892/united-states/las-vegas/k-by-cirque-du-soleil"), // LV video
+        HeadoutVideo(videoUrl: "http://res.cloudinary.com/dscs5qleu/video/upload/c_fill,h_1280,w_720/v1487375818/videoplayback_awa49f.mp4", linkUrl: "https://www.headout.com/tour/892/united-states/las-vegas/k-by-cirque-du-soleil") // LV video
         // sample videos
 //        HeadoutVideo(videoUrl: "http://res.cloudinary.com/dscs5qleu/video/upload/v1487383842/big_buck_bunny_720p_1mb_gefmrk.mp4", linkUrl: "https://www.headout.com"),
 //        HeadoutVideo(videoUrl: "http://res.cloudinary.com/dscs5qleu/video/upload/v1487383842/big_buck_bunny_720p_1mb_gefmrk.mp4", linkUrl: "https://www.headout.com"),
-        HeadoutVideo(videoUrl: "http://res.cloudinary.com/dscs5qleu/video/upload/v1487383842/big_buck_bunny_720p_1mb_gefmrk.mp4", linkUrl: "https://www.headout.com")
+//        HeadoutVideo(videoUrl: "http://res.cloudinary.com/dscs5qleu/video/upload/v1487383842/big_buck_bunny_720p_1mb_gefmrk.mp4", linkUrl: "https://www.headout.com")
     ]
     
     var savedUrls = [HeadoutVideo]()
