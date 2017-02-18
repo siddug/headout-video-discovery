@@ -11,5 +11,7 @@ import UIKit
 
 class Color {
     static let white = UIColor.white
-    static let spacedLabelColor = Color.white
+    static let black = UIColor.black
+    static let spacedLabel = Color.white
+    static let roundBlack = Color.black
 }

@@ -11,7 +11,9 @@ import Foundation
 class VideoPlayer {
     static let shared = VideoPlayer()
     
-    fileprivate init() { }
+    fileprivate init() {
+        wishlistArray = Array.init(repeating: Wish(), count: urlArray.count)
+    }
     let urlArray = [
         "http://res.cloudinary.com/dscs5qleu/video/upload/c_fill,h_1280,w_720/v1487353601/videoplayback_amdsji.mp4",
         "http://res.cloudinary.com/dscs5qleu/video/upload/v1487373441/videoplayback_ui4yho.mp4",
@@ -25,11 +27,35 @@ class VideoPlayer {
     ]
     
     var playPosition = 0
+    var wishlistArray: [Wish]!
     
     func getURLString() -> String? {
         if playPosition < urlArray.count {
             return urlArray[playPosition]
         }
         return nil
+    }
+    
+    func changeWish() -> Bool {
+        if playPosition < urlArray.count {
+            wishlistArray[playPosition].change()
+            return true
+        }
+        return false
+    }
+    
+    func getWish() -> Wish! {
+        if playPosition < urlArray.count {
+            return wishlistArray[playPosition]
+        }
+        return nil
+    }
+}
+
+struct Wish {
+    var isHighlighted = false
+    
+    mutating func change() {
+        isHighlighted = !isHighlighted
     }
 }

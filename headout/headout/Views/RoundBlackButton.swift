@@ -1,16 +1,15 @@
 //
-//  SpacedOutLabel.swift
+//  RoundBlackButton.swift
 //  headout
 //
 //  Created by varun jindal on 18/02/17.
 //  Copyright © 2017 headout. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 @IBDesignable
-class SpacedOutLabel: UILabel {
+class RoundBlackButton: RoundedButton {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setup()
@@ -26,8 +25,11 @@ class SpacedOutLabel: UILabel {
         setup()
     }
     
-    func setup() {
-        setTextSpacing(spacing: LabelConstants.characterSpacing)
-        textColor = Color.spacedLabel
+    override func setup() {
+        super.setup()
+        backgroundColor = Color.roundBlack
+        setTitleColor(Color.spacedLabel, for: .normal)
+        titleLabel?.setTextSpacing(spacing: LabelConstants.characterSpacing)
     }
+    
 }
