@@ -30,18 +30,18 @@ class VideoViewController: UIViewController  {
     }
     
     @IBAction func replayButtonTapped(_ sender: UIButton) {
-        removeReplayView()
+        removeOverlayViews()
         player.playFromBeginning()
     }
     
     @IBAction func nextButtonTapped(_ sender: UIButton) {
-        removeReplayView()
         skipButtonTapped(sender)
     }
     
-    func removeReplayView() {
+    func removeOverlayViews() {
         blurrOverlay.isHidden = true
         nextView.isHidden = true
+        playButton.isHidden = true
         
         wishButtonTopConstraint.constant = UIConstants.topSpaceForWishButton
         wishButtonRightConstraint.constant = UIConstants.rightSpaceForWishButton
@@ -53,6 +53,7 @@ class VideoViewController: UIViewController  {
     
     @IBAction func skipButtonTapped(_ sender: UIButton) {
         VideoPlayer.shared.playPosition += 1
+        removeOverlayViews()
         if let urlString = VideoPlayer.shared.getVideoUrl(), let url = URL.init(string: urlString) {
             player.setUrl(url)
             wishlistButton.isSelected = VideoPlayer.shared.getWish().isHighlighted
@@ -62,8 +63,7 @@ class VideoViewController: UIViewController  {
     }
     
     @IBAction func playButtonTapped(_ sender: UIButton) {
-        blurrOverlay.isHidden = false
-        playButton.isHidden = true
+        removeOverlayViews()
         player.playFromCurrentTime()
     }
     
@@ -90,7 +90,7 @@ class VideoViewController: UIViewController  {
     }
     
     func createBlurredView() {
-        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.regular)
+        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.light)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = blurrOverlay.bounds
         blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
@@ -114,16 +114,14 @@ class VideoViewController: UIViewController  {
             player.setUrl(url)
         }
         
-        let tap = UITapGestureRecognizer.init(target: player.view, action: #selector(playerTap))
+        let tap = UITapGestureRecognizer.init(target: self, action: #selector(playerTap(_:)))
         player.view.addGestureRecognizer(tap)
     }
     
-    func playerTap () {
+    func playerTap (_ sender: UITapGestureRecognizer) {
         player.pause()
-        // add overlay
         blurrOverlay.isHidden = false
         playButton.isHidden = false
-        player.playFromCurrentTime()
     }
 }
 
@@ -156,7 +154,7 @@ extension VideoViewController: PlayerDelegate {
         print("playback end")
         blurrOverlay.isHidden = false
         nextView.isHidden = false
-        wishButtonTopConstraint.constant = nextView.frame.minY + replayButton.frame.minY - 20
+        wishButtonTopConstraint.constant = nextView.frame.minY + replayButton.frame.minY - UIConstants.offsetForTopConstraint
         wishButtonRightConstraint.constant = nextView.frame.minX + nextView.center.x - UIConstants.centerDiffForReplayButtons + wishlistButton.bounds.width / 2
         UIView.animate(withDuration: UIConstants.wishListMovementInterval) { [weak self] in
             guard let strongSelf = self else {return}
