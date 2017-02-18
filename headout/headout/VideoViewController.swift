@@ -213,7 +213,7 @@ class VideoViewController: UIViewController  {
     }
     
     func replayCurrentList() {
-        VideoPlayer.shared.playingSaved = VideoPlayer.shared.playingSaved 
+        VideoPlayer.shared.playingSaved = VideoPlayer.shared.playingSaved
         VideoPlayer.shared.playPosition = 0
         playNewVideo()
     }

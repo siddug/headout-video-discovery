@@ -28,31 +28,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" alpha="0.2199999988079071" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launchScreenImage" translatesAutoresizingMaskIntoConstraints="NO" id="MVm-A4-3Ju">
+                            <imageView userInteractionEnabled="NO" alpha="0.22" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launchScreenImage" translatesAutoresizingMaskIntoConstraints="NO" id="MVm-A4-3Ju">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HS8-Sm-KZT">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="headphones" translatesAutoresizingMaskIntoConstraints="NO" id="HS8-Sm-KZT">
                                 <rect key="frame" x="177" y="113" width="60" height="55"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="60" id="hwL-bl-hgP"/>
                                     <constraint firstAttribute="height" constant="55" id="x4H-fz-qHv"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r6j-Il-IHe" customClass="SpacedOutLabel" customModule="headout" customModuleProvider="target">
-                                <rect key="frame" x="186" y="201" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r6j-Il-IHe" userLabel="USE HEADPHONES FOR MAXIMUM EFFECT" customClass="SpacedOutLabel" customModule="headout" customModuleProvider="target">
+                                <rect key="frame" x="57" y="201" width="300" height="33.666666666666657"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="Git-Lq-2t8"/>
+                                </constraints>
+                                <string key="text">USE HEADPHONES
+FOR MAXIMUM EFFECT</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="HS8-Sm-KZT" firstAttribute="centerX" secondItem="lOd-6V-DhO" secondAttribute="centerX" id="2Y5-fZ-7Eq"/>
+                            <constraint firstItem="r6j-Il-IHe" firstAttribute="top" secondItem="HS8-Sm-KZT" secondAttribute="bottom" constant="33" id="Aiw-hY-oVk"/>
                             <constraint firstItem="HS8-Sm-KZT" firstAttribute="top" secondItem="JYC-I2-ggk" secondAttribute="bottom" constant="93" id="Mps-ZV-gRK"/>
                             <constraint firstItem="MVm-A4-3Ju" firstAttribute="width" secondItem="lOd-6V-DhO" secondAttribute="width" id="RP1-Pq-S6L"/>
                             <constraint firstItem="MVm-A4-3Ju" firstAttribute="centerX" secondItem="lOd-6V-DhO" secondAttribute="centerX" id="bnM-92-hSf"/>
                             <constraint firstItem="MVm-A4-3Ju" firstAttribute="height" secondItem="lOd-6V-DhO" secondAttribute="height" id="f7I-1R-Son"/>
+                            <constraint firstItem="r6j-Il-IHe" firstAttribute="centerX" secondItem="HS8-Sm-KZT" secondAttribute="centerX" id="iuG-Er-KSZ"/>
                             <constraint firstItem="MVm-A4-3Ju" firstAttribute="centerY" secondItem="lOd-6V-DhO" secondAttribute="centerY" id="uUL-Uc-SEd"/>
                         </constraints>
                     </view>
@@ -264,6 +270,7 @@
     <resources>
         <image name="closeSideBar" width="51" height="50"/>
         <image name="hamburger" width="41" height="27"/>
+        <image name="headphones" width="59" height="55"/>
         <image name="launchScreenImage" width="266" height="400"/>
         <image name="notInWishlist" width="47" height="42"/>
         <image name="replay" width="36" height="34"/>
