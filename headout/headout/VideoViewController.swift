@@ -76,7 +76,8 @@ class VideoViewController: UIViewController  {
     @IBAction func playAgainButtonTapped(_ sender: UIButton) {
         replayCurrentList()
     }
-        @IBAction func skipButtonTapped(_ sender: UIButton) {
+    
+    @IBAction func skipButtonTapped(_ sender: UIButton) {
         VideoPlayer.shared.playPosition = (VideoPlayer.shared.playPosition + 1)
         playNewVideo()
     }
@@ -89,7 +90,7 @@ class VideoViewController: UIViewController  {
     @IBAction func wishlistButtonTapped(_ sender: UIButton) {
         // wishlistButtonTapped. Save to a db
         if VideoPlayer.shared.changeWish() {
-            sender.isSelected = VideoPlayer.shared.getWish()
+            wishlistButton.isSelected = VideoPlayer.shared.getWish()
             UIView.animate(withDuration: UIConstants.wishListMovementInterval) { [weak self] in
                 guard let strongSelf = self else {return}
                 strongSelf.view.layoutIfNeeded()
@@ -212,6 +213,7 @@ class VideoViewController: UIViewController  {
     }
     
     func replayCurrentList() {
+        VideoPlayer.shared.playingSaved = VideoPlayer.shared.playingSaved 
         VideoPlayer.shared.playPosition = 0
         playNewVideo()
     }
