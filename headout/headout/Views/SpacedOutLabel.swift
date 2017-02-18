@@ -28,7 +28,6 @@ class SpacedOutLabel: UILabel {
     
     func setup() {
         setTextSpacing(spacing: LabelConstants.characterSpacing, paraSpacing: LabelConstants.paraSpacing)
-        vertical
         textColor = Color.spacedLabel
     }
 }

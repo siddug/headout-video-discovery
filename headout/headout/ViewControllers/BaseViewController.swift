@@ -58,7 +58,11 @@ class BaseViewController: UIViewController {
             if self.isKind(of: VideoViewController.self) && !networkVC.isWifiAvailable {
                 present(networkVC, animated: true, completion: nil)
             } else if self.isKind(of: NetworkViewController.self) && networkVC.isWifiAvailable {
-                dismiss(animated: true, completion: nil)
+                (self as! NetworkViewController).isWifiAvailable = true
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [weak self] in
+                    guard let strongSelf = self else {return}
+                    strongSelf.dismiss(animated: true, completion: nil)
+                }
             }
         }
     }

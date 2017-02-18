@@ -10,5 +10,5 @@ import Foundation
 
 struct Strings {
     static let wifiAvailable = "MAINTAIN GOOD NET CONNECTION FOR UNINTERRUPTED EXPERIENCE"
-    static let wifiUnavailable = "NO INTERNET CONNECTION"
+    static let wifiUnavailable = "NO WIFI CONNECTION"
 }

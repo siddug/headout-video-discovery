@@ -13,10 +13,22 @@ class NetworkViewController: BaseViewController {
     @IBOutlet var wifiIcon: UIImageView!
     @IBOutlet var wifiConnectionLabel: SpacedOutLabel!
     
-    var isWifiAvailable = false
+    var isWifiAvailable = false {
+        didSet {
+            if wifiIcon != nil {
+                setup()
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setup()
+
+        // Do any additional setup after loading the view.
+    }
+    
+    func setup() {
         if isWifiAvailable {
             wifiIcon.isHighlighted = false
             wifiConnectionLabel.text = Strings.wifiAvailable
@@ -24,9 +36,7 @@ class NetworkViewController: BaseViewController {
             wifiIcon.isHighlighted = true
             wifiConnectionLabel.text = Strings.wifiUnavailable
         }
-        
-
-        // Do any additional setup after loading the view.
+        wifiConnectionLabel.setTextSpacing()
     }
 
     override func didReceiveMemoryWarning() {

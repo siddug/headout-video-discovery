@@ -30,6 +30,7 @@ class RoundBlackButton: RoundedButton {
         backgroundColor = Color.roundBlack
         setTitleColor(Color.spacedLabel, for: .normal)
         titleLabel?.setTextSpacing(spacing: LabelConstants.characterSpacing)
+        titleLabel?.sizeToFit()
     }
     
 }
