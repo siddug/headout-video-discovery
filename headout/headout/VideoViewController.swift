@@ -24,7 +24,7 @@ class VideoViewController: UIViewController  {
     @IBAction func skipButtonTapped(_ sender: UIButton) {
         // SKip Button Tap. play next video
         VideoPlayer.shared.playPosition += 1
-        if let urlString = VideoPlayer.shared.getURLString(), let url = URL.init(string: urlString) {
+        if let urlString = VideoPlayer.shared.getVideoUrl(), let url = URL.init(string: urlString) {
             player.setUrl(url)
         } else {
             // Open last page
@@ -64,7 +64,7 @@ class VideoViewController: UIViewController  {
         
         view.sendSubview(toBack: player.view)
         
-        if let urlString = VideoPlayer.shared.getURLString(), let url = URL.init(string: urlString) {
+        if let urlString = VideoPlayer.shared.getVideoUrl(), let url = URL.init(string: urlString) {
             player.setUrl(url)
         }
     }
