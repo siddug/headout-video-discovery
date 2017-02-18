@@ -63,20 +63,20 @@
 
 /* Begin PBXFileReference section */
 		164BFC1E1CD8D9B609B427A7 /* Pods_headoutTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_headoutTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		346945E41E57B1B6007722CF /* VideoPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoPlayer.swift; path = Models/VideoPlayer.swift; sourceTree = "<group>"; };
-		346945E91E57B877007722CF /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Utilities/Constants.swift; sourceTree = "<group>"; };
-		346945EC1E57BF3D007722CF /* UILabelExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UILabelExtension.swift; path = Extensions/UILabelExtension.swift; sourceTree = "<group>"; };
-		346945EE1E57C012007722CF /* SpacedOutLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpacedOutLabel.swift; path = Views/SpacedOutLabel.swift; sourceTree = "<group>"; };
-		346945F21E57C549007722CF /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Color.swift; path = Utilities/Color.swift; sourceTree = "<group>"; };
-		346945F41E57CA1B007722CF /* Images.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Images.swift; path = Utilities/Images.swift; sourceTree = "<group>"; };
-		3499611B1E5859AA008937CB /* SideBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SideBarViewController.swift; path = Custom/SideBarViewController.swift; sourceTree = "<group>"; };
-		3499611D1E587D63008937CB /* NetworkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetworkViewController.swift; path = ViewControllers/NetworkViewController.swift; sourceTree = "<group>"; };
-		3499611F1E587DC8008937CB /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseViewController.swift; path = ViewControllers/BaseViewController.swift; sourceTree = "<group>"; };
-		349961211E587F1B008937CB /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Reachability.swift; path = Custom/Reachability.swift; sourceTree = "<group>"; };
-		349961231E5880BC008937CB /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Strings.swift; path = Utilities/Strings.swift; sourceTree = "<group>"; };
-		34D9B8781E57CDAB0073DE57 /* RoundedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RoundedButton.swift; path = Views/RoundedButton.swift; sourceTree = "<group>"; };
-		34D9B87A1E57CDEB0073DE57 /* RoundBlackButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RoundBlackButton.swift; path = Views/RoundBlackButton.swift; sourceTree = "<group>"; };
-		34D9B87C1E57D3E20073DE57 /* BaseButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseButton.swift; path = Views/BaseButton.swift; sourceTree = "<group>"; };
+		346945E41E57B1B6007722CF /* VideoPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoPlayer.swift; path = VideoPlayer.swift; sourceTree = "<group>"; };
+		346945E91E57B877007722CF /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Constants.swift; sourceTree = "<group>"; };
+		346945EC1E57BF3D007722CF /* UILabelExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UILabelExtension.swift; path = UILabelExtension.swift; sourceTree = "<group>"; };
+		346945EE1E57C012007722CF /* SpacedOutLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpacedOutLabel.swift; path = SpacedOutLabel.swift; sourceTree = "<group>"; };
+		346945F21E57C549007722CF /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Color.swift; path = Color.swift; sourceTree = "<group>"; };
+		346945F41E57CA1B007722CF /* Images.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Images.swift; path = Images.swift; sourceTree = "<group>"; };
+		3499611B1E5859AA008937CB /* SideBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SideBarViewController.swift; path = SideBarViewController.swift; sourceTree = "<group>"; };
+		3499611D1E587D63008937CB /* NetworkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetworkViewController.swift; path = NetworkViewController.swift; sourceTree = "<group>"; };
+		3499611F1E587DC8008937CB /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseViewController.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		349961211E587F1B008937CB /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Reachability.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		349961231E5880BC008937CB /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Strings.swift; path = Strings.swift; sourceTree = "<group>"; };
+		34D9B8781E57CDAB0073DE57 /* RoundedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RoundedButton.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
+		34D9B87A1E57CDEB0073DE57 /* RoundBlackButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RoundBlackButton.swift; path = RoundBlackButton.swift; sourceTree = "<group>"; };
+		34D9B87C1E57D3E20073DE57 /* BaseButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseButton.swift; path = BaseButton.swift; sourceTree = "<group>"; };
 		38543CED441E477A599B74D8 /* Pods-headout.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-headout.debug.xcconfig"; path = "Pods/Target Support Files/Pods-headout/Pods-headout.debug.xcconfig"; sourceTree = "<group>"; };
 		3CC6699620CC1DB9EF5B70D2 /* Pods-headoutTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-headoutTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-headoutTests/Pods-headoutTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A655B459E493C1E151228809 /* Pods-headoutUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-headoutUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-headoutUITests/Pods-headoutUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -143,10 +143,11 @@
 			isa = PBXGroup;
 			children = (
 				CDA185C81E570C4500A3D23B /* Assets.xcassets */,
-				CDA185CD1E570C4500A3D23B /* Info.plist */,
 				CD47BC251E57E847002C5CEE /* GoogleService-Info.plist */,
+				CDA185CD1E570C4500A3D23B /* Info.plist */,
 			);
 			name = SupportingFiles;
+			path = SupportingFiles;
 			sourceTree = "<group>";
 		};
 		346945E11E57B124007722CF /* Models */ = {
@@ -155,39 +156,43 @@
 				346945E41E57B1B6007722CF /* VideoPlayer.swift */,
 			);
 			name = Models;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		346945E21E57B12D007722CF /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				346945EE1E57C012007722CF /* SpacedOutLabel.swift */,
-				34D9B8781E57CDAB0073DE57 /* RoundedButton.swift */,
-				34D9B87A1E57CDEB0073DE57 /* RoundBlackButton.swift */,
 				34D9B87C1E57D3E20073DE57 /* BaseButton.swift */,
+				34D9B87A1E57CDEB0073DE57 /* RoundBlackButton.swift */,
+				34D9B8781E57CDAB0073DE57 /* RoundedButton.swift */,
+				346945EE1E57C012007722CF /* SpacedOutLabel.swift */,
 			);
 			name = Views;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		346945E31E57B136007722CF /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				CDA185C31E570C4500A3D23B /* VideoViewController.swift */,
-				3499611D1E587D63008937CB /* NetworkViewController.swift */,
 				3499611F1E587DC8008937CB /* BaseViewController.swift */,
+				3499611D1E587D63008937CB /* NetworkViewController.swift */,
+				CDA185C31E570C4500A3D23B /* VideoViewController.swift */,
 			);
 			name = ViewControllers;
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		346945E61E57B846007722CF /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				CDA186021E578C6B00A3D23B /* Fonts.swift */,
-				346945E91E57B877007722CF /* Constants.swift */,
 				346945F21E57C549007722CF /* Color.swift */,
+				346945E91E57B877007722CF /* Constants.swift */,
+				CDA186021E578C6B00A3D23B /* Fonts.swift */,
 				346945F41E57CA1B007722CF /* Images.swift */,
 				349961231E5880BC008937CB /* Strings.swift */,
 			);
 			name = Utilities;
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		346945EB1E57BF2A007722CF /* Extensions */ = {
@@ -196,15 +201,17 @@
 				346945EC1E57BF3D007722CF /* UILabelExtension.swift */,
 			);
 			name = Extensions;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		3499611A1E585925008937CB /* Custom */ = {
 			isa = PBXGroup;
 			children = (
-				3499611B1E5859AA008937CB /* SideBarViewController.swift */,
 				349961211E587F1B008937CB /* Reachability.swift */,
+				3499611B1E5859AA008937CB /* SideBarViewController.swift */,
 			);
 			name = Custom;
+			path = Custom;
 			sourceTree = "<group>";
 		};
 		3F5EA02A19BD39D6E5849679 /* Pods */ = {
@@ -223,12 +230,12 @@
 		CDA185B51E570C4400A3D23B = {
 			isa = PBXGroup;
 			children = (
+				DC1AE584CE399E1D07E1655E /* Frameworks */,
+				3F5EA02A19BD39D6E5849679 /* Pods */,
+				CDA185BF1E570C4500A3D23B /* Products */,
 				CDA185C01E570C4500A3D23B /* headout */,
 				CDA185D51E570C4500A3D23B /* headoutTests */,
 				CDA185E01E570C4500A3D23B /* headoutUITests */,
-				CDA185BF1E570C4500A3D23B /* Products */,
-				3F5EA02A19BD39D6E5849679 /* Pods */,
-				DC1AE584CE399E1D07E1655E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -247,15 +254,15 @@
 			children = (
 				3499611A1E585925008937CB /* Custom */,
 				346945EB1E57BF2A007722CF /* Extensions */,
+				CDA185EF1E578C2900A3D23B /* Fonts */,
+				346945E11E57B124007722CF /* Models */,
+				346945E01E57B102007722CF /* SupportingFiles */,
 				346945E61E57B846007722CF /* Utilities */,
 				346945E31E57B136007722CF /* ViewControllers */,
 				346945E21E57B12D007722CF /* Views */,
-				346945E11E57B124007722CF /* Models */,
-				346945E01E57B102007722CF /* SupportingFiles */,
-				CDA185EF1E578C2900A3D23B /* Fonts */,
 				CDA185C11E570C4500A3D23B /* AppDelegate.swift */,
-				CDA185C51E570C4500A3D23B /* Main.storyboard */,
 				CDA185CA1E570C4500A3D23B /* LaunchScreen.storyboard */,
+				CDA185C51E570C4500A3D23B /* Main.storyboard */,
 			);
 			path = headout;
 			sourceTree = "<group>";
@@ -263,8 +270,8 @@
 		CDA185D51E570C4500A3D23B /* headoutTests */ = {
 			isa = PBXGroup;
 			children = (
-				CDA185D61E570C4500A3D23B /* headoutTests.swift */,
 				CDA185D81E570C4500A3D23B /* Info.plist */,
+				CDA185D61E570C4500A3D23B /* headoutTests.swift */,
 			);
 			path = headoutTests;
 			sourceTree = "<group>";
@@ -272,8 +279,8 @@
 		CDA185E01E570C4500A3D23B /* headoutUITests */ = {
 			isa = PBXGroup;
 			children = (
-				CDA185E11E570C4500A3D23B /* headoutUITests.swift */,
 				CDA185E31E570C4500A3D23B /* Info.plist */,
+				CDA185E11E570C4500A3D23B /* headoutUITests.swift */,
 			);
 			path = headoutUITests;
 			sourceTree = "<group>";
@@ -292,6 +299,7 @@
 				CDA185F81E578C4300A3D23B /* Montserrat-Thin.otf */,
 			);
 			name = Fonts;
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		DC1AE584CE399E1D07E1655E /* Frameworks */ = {
@@ -654,6 +662,7 @@
 				CDA185C61E570C4500A3D23B /* Base */,
 			);
 			name = Main.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 		CDA185CA1E570C4500A3D23B /* LaunchScreen.storyboard */ = {
@@ -662,6 +671,7 @@
 				CDA185CB1E570C4500A3D23B /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -765,7 +775,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = LBE8R7KQ3K;
-				INFOPLIST_FILE = headout/Info.plist;
+				INFOPLIST_FILE = headout/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.headout.headout;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -780,7 +790,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = LBE8R7KQ3K;
-				INFOPLIST_FILE = headout/Info.plist;
+				INFOPLIST_FILE = headout/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.headout.headout;
 				PRODUCT_NAME = "$(TARGET_NAME)";
