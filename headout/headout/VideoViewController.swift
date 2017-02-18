@@ -27,10 +27,12 @@ class VideoViewController: UIViewController  {
     @IBOutlet var wishButtonTopConstraint: NSLayoutConstraint!
     
     @IBAction func knowMoreButtonTapped(_ sender: UIButton) {
-        let webVC = SFSafariViewController.init(url: NSURL(string: VideoPlayer.shared.getLinkUrl()!) as! URL)
-        webVC.delegate = self
-        self.present(webVC, animated: true, completion: nil)
-        player.pause()
+        if let urlString = VideoPlayer.shared.getLinkUrl(), let url = URL.init(string: urlString) {
+            let webVC = SFSafariViewController.init(url: url)
+            webVC.delegate = self
+            self.present(webVC, animated: true, completion: nil)
+            player.pause()
+        }
     }
     
     @IBAction func replayButtonTapped(_ sender: UIButton) {
@@ -131,6 +133,7 @@ class VideoViewController: UIViewController  {
 
 extension VideoViewController: SFSafariViewControllerDelegate {
     func safariViewControllerDidFinish(_ controller: SFSafariViewController) {
+        removeOverlayViews()
         player.playFromCurrentTime()
     }
 }
