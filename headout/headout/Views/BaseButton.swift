@@ -1,16 +1,16 @@
 //
-//  SpacedOutLabel.swift
+//  BaseButton.swift
 //  headout
 //
 //  Created by varun jindal on 18/02/17.
 //  Copyright © 2017 headout. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 @IBDesignable
-class SpacedOutLabel: UILabel {
+class BaseButton: UIButton {
+
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setup()
@@ -27,7 +27,7 @@ class SpacedOutLabel: UILabel {
     }
     
     func setup() {
-        setTextSpacing(spacing: LabelConstants.characterSpacing)
-        textColor = Color.spacedLabel
+        imageView?.contentMode = .scaleAspectFit
     }
+
 }

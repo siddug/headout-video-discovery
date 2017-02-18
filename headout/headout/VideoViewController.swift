@@ -13,7 +13,29 @@ import AVFoundation
 
 class VideoViewController: UIViewController  {
     let player: Player = Player()
-//    var youTubePlayer: YouTubePlayerView?
+    
+    @IBOutlet var knowMoreButton: RoundBlackButton!
+    @IBOutlet var wishlistButton: UIButton!
+    
+    @IBAction func knowMoreButtonTapped(_ sender: UIButton) {
+        // Know more Button Tap. Open web view
+        
+    }
+    @IBAction func skipButtonTapped(_ sender: UIButton) {
+        // SKip Button Tap. play next video
+        VideoPlayer.shared.playPosition += 1
+        if let urlString = VideoPlayer.shared.getURLString(), let url = URL.init(string: urlString) {
+            player.setUrl(url)
+        } else {
+            // Open last page
+        }
+    }
+    @IBAction func wishlistButtonTapped(_ sender: UIButton) {
+        // wishlistButtonTapped. Save to a db
+        if VideoPlayer.shared.changeWish() {
+            sender.isSelected = VideoPlayer.shared.getWish().isHighlighted
+        }
+    }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -40,7 +62,9 @@ class VideoViewController: UIViewController  {
         player.fillMode = AVLayerVideoGravityResizeAspectFill
         player.bufferSize = VideoConstants.bufferSize
         
-        if let urlString = VideoPlayer.shared.getVideoUrl(), let url = URL.init(string: urlString) {
+        view.sendSubview(toBack: player.view)
+        
+        if let urlString = VideoPlayer.shared.getURLString(), let url = URL.init(string: urlString) {
             player.setUrl(url)
         }
     }
