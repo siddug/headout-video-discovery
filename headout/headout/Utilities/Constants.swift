@@ -16,3 +16,10 @@ struct VideoConstants {
 struct LabelConstants {
     static let characterSpacing: CGFloat = 7
 }
+
+struct UIConstants {
+    static let centerDiffForReplayButtons: CGFloat = 30
+    static let topSpaceForWishButton: CGFloat = 30
+    static let rightSpaceForWishButton: CGFloat = 21
+    static let wishListMovementInterval = 1.0
+}

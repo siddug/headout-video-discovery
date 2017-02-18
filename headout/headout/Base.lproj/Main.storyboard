@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -83,18 +84,71 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="63" id="9py-LB-XCQ"/>
                                 </constraints>
-                                <inset key="imageEdgeInsets" minX="-11" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <inset key="imageEdgeInsets" minX="-11" minY="7" maxX="0.0" maxY="7"/>
                                 <state key="normal" image="right-arrow"/>
                                 <connections>
                                     <action selector="skipButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FkR-Rc-k79"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vz8-b8-d08">
-                                <rect key="frame" x="338" y="50" width="35" height="30"/>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0AU-ep-XZ7" userLabel="BlurrOverlay">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rhj-tt-Wk5" customClass="RoundBlackButton" customModule="headout" customModuleProvider="target">
+                                <rect key="frame" x="137" y="298.66666666666669" width="140" height="140"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="3rA-Q1-BLV"/>
-                                    <constraint firstAttribute="width" constant="35" id="ReD-JI-SqX"/>
+                                    <constraint firstAttribute="width" secondItem="Rhj-tt-Wk5" secondAttribute="height" multiplier="1:1" id="fs5-zB-Yzg"/>
+                                    <constraint firstAttribute="width" constant="140" id="qM5-NN-4iN"/>
                                 </constraints>
+                                <state key="normal" image="right-arrow"/>
+                                <connections>
+                                    <action selector="playButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="R1s-7K-4TS"/>
+                                </connections>
+                            </button>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dRv-Wl-ERR" userLabel="NextView">
+                                <rect key="frame" x="0.0" y="303.33333333333331" width="414" height="130"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tFi-dD-XZR" customClass="BaseButton" customModule="headout" customModuleProvider="target">
+                                        <rect key="frame" x="216" y="10" width="42" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="gHz-bZ-7Lz"/>
+                                            <constraint firstAttribute="width" constant="42" id="oAO-UF-Wuj"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
+                                        <state key="normal" image="replay"/>
+                                        <connections>
+                                            <action selector="replayButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yDI-p1-7oc"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XJ3-0G-XRG" customClass="RoundBlackButton" customModule="headout" customModuleProvider="target">
+                                        <rect key="frame" x="67" y="86" width="280" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="34" id="8bl-Z6-aVc"/>
+                                            <constraint firstAttribute="width" constant="280" id="AaD-oc-oQT"/>
+                                        </constraints>
+                                        <state key="normal" title="NEXT EXPERIENCE"/>
+                                        <connections>
+                                            <action selector="nextButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KA4-TF-vF2"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="130" id="3uQ-yA-aKA"/>
+                                    <constraint firstItem="XJ3-0G-XRG" firstAttribute="centerX" secondItem="dRv-Wl-ERR" secondAttribute="centerX" id="ShE-FM-1pt"/>
+                                    <constraint firstItem="tFi-dD-XZR" firstAttribute="top" secondItem="dRv-Wl-ERR" secondAttribute="top" constant="10" id="WbO-ho-eEF"/>
+                                    <constraint firstItem="tFi-dD-XZR" firstAttribute="centerX" secondItem="dRv-Wl-ERR" secondAttribute="centerX" constant="30" id="fXR-u9-sMG"/>
+                                    <constraint firstAttribute="bottom" secondItem="XJ3-0G-XRG" secondAttribute="bottom" constant="10" id="te1-UU-wrk"/>
+                                </constraints>
+                                <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vz8-b8-d08" customClass="BaseButton" customModule="headout" customModuleProvider="target">
+                                <rect key="frame" x="328" y="50" width="45" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="3rA-Q1-BLV"/>
+                                    <constraint firstAttribute="width" constant="45" id="ReD-JI-SqX"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
                                 <state key="normal" image="notInWishlist"/>
                                 <state key="selected" image="wishlist"/>
                                 <state key="highlighted" image="wishlist"/>
@@ -106,17 +160,32 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="Rhj-tt-Wk5" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="3aj-8P-M0n"/>
                             <constraint firstItem="QHT-dS-OiB" firstAttribute="height" secondItem="60r-qX-W0u" secondAttribute="height" id="6U3-V1-npd"/>
+                            <constraint firstItem="Rhj-tt-Wk5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9db-qa-N37"/>
+                            <constraint firstItem="0AU-ep-XZ7" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="9xD-fV-Fdv"/>
                             <constraint firstAttribute="trailingMargin" secondItem="vz8-b8-d08" secondAttribute="trailing" constant="21" id="Brk-5f-aDl"/>
+                            <constraint firstItem="dRv-Wl-ERR" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="Iza-oD-VHQ"/>
+                            <constraint firstItem="dRv-Wl-ERR" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Mb0-JI-wdy"/>
                             <constraint firstItem="60r-qX-W0u" firstAttribute="centerY" secondItem="QHT-dS-OiB" secondAttribute="centerY" id="Xer-BX-Z2o"/>
+                            <constraint firstItem="dRv-Wl-ERR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cCa-cd-0BJ"/>
+                            <constraint firstItem="0AU-ep-XZ7" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="hjD-pf-TkL"/>
+                            <constraint firstItem="0AU-ep-XZ7" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="j3j-6g-9bh"/>
                             <constraint firstItem="QHT-dS-OiB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mc1-IE-Bfs"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="QHT-dS-OiB" secondAttribute="bottom" constant="17" id="nZj-5L-vhA"/>
+                            <constraint firstItem="0AU-ep-XZ7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pQS-zS-Qbd"/>
                             <constraint firstAttribute="trailingMargin" secondItem="60r-qX-W0u" secondAttribute="trailing" constant="-41" id="wOA-cp-jTA"/>
                             <constraint firstItem="vz8-b8-d08" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="30" id="zM0-RI-twr"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="blurrOverlay" destination="0AU-ep-XZ7" id="r3g-dw-dbB"/>
                         <outlet property="knowMoreButton" destination="QHT-dS-OiB" id="sDE-PK-Mhe"/>
+                        <outlet property="nextView" destination="dRv-Wl-ERR" id="GYH-m4-3Go"/>
+                        <outlet property="playButton" destination="Rhj-tt-Wk5" id="07K-9H-eH6"/>
+                        <outlet property="replayButton" destination="tFi-dD-XZR" id="OXC-Vf-71h"/>
+                        <outlet property="wishButtonRightConstraint" destination="Brk-5f-aDl" id="DFo-fl-IzY"/>
+                        <outlet property="wishButtonTopConstraint" destination="zM0-RI-twr" id="6VT-A5-joC"/>
                         <outlet property="wishlistButton" destination="vz8-b8-d08" id="o5E-RH-ikY"/>
                     </connections>
                 </viewController>
@@ -128,7 +197,8 @@
     <resources>
         <image name="launchScreenImage" width="266" height="400"/>
         <image name="notInWishlist" width="47" height="42"/>
-        <image name="right-arrow" width="13" height="24"/>
+        <image name="replay" width="36" height="34"/>
+        <image name="right-arrow" width="34" height="63"/>
         <image name="wishlist" width="43" height="38"/>
     </resources>
 </document>
