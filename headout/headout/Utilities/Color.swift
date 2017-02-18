@@ -11,7 +11,9 @@ import UIKit
 
 class Color {
     static let white = UIColor.white
+    static let clear = UIColor.clear
     static let black = UIColor.black
     static let spacedLabel = Color.white
     static let roundBlack = Color.black
+    static let sideBarBg = Color.white
 }

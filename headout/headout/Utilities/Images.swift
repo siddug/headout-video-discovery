@@ -17,4 +17,5 @@ class Images {
     static let success = #imageLiteral(resourceName: "success")
     static let wifi = #imageLiteral(resourceName: "wifi")
     static let nowifi = #imageLiteral(resourceName: "noWifi")
+    static let skip = #imageLiteral(resourceName: "skip")
 }

@@ -135,6 +135,19 @@
                                     <action selector="wishlistButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RKd-sC-IYr"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9od-LE-8pU" customClass="BaseButton" customModule="headout" customModuleProvider="target">
+                                <rect key="frame" x="41" y="47.666666666666671" width="45" height="45.000000000000014"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="9od-LE-8pU" secondAttribute="height" multiplier="1:1" id="5R2-ge-MF2"/>
+                                    <constraint firstAttribute="width" constant="45" id="nb9-Bq-d8V"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
+                                <state key="normal" image="hamburger"/>
+                                <state key="selected" image="closeSideBar"/>
+                                <connections>
+                                    <action selector="hamburgerButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RBF-IB-mMh"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QHT-dS-OiB" customClass="RoundBlackButton" customModule="headout" customModuleProvider="target">
                                 <rect key="frame" x="112" y="677" width="190" height="42"/>
                                 <constraints>
@@ -160,6 +173,7 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="9od-LE-8pU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="21" id="26t-oE-zek"/>
                             <constraint firstItem="Rhj-tt-Wk5" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="3aj-8P-M0n"/>
                             <constraint firstItem="QHT-dS-OiB" firstAttribute="height" secondItem="60r-qX-W0u" secondAttribute="height" id="6U3-V1-npd"/>
                             <constraint firstItem="Rhj-tt-Wk5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9db-qa-N37"/>
@@ -172,6 +186,7 @@
                             <constraint firstItem="0AU-ep-XZ7" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="hjD-pf-TkL"/>
                             <constraint firstItem="0AU-ep-XZ7" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="j3j-6g-9bh"/>
                             <constraint firstItem="QHT-dS-OiB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mc1-IE-Bfs"/>
+                            <constraint firstItem="9od-LE-8pU" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="27.666666666666671" id="nE7-Qv-Nwm"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="QHT-dS-OiB" secondAttribute="bottom" constant="17" id="nZj-5L-vhA"/>
                             <constraint firstItem="0AU-ep-XZ7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pQS-zS-Qbd"/>
                             <constraint firstAttribute="trailingMargin" secondItem="60r-qX-W0u" secondAttribute="trailing" constant="-41" id="wOA-cp-jTA"/>
@@ -180,6 +195,8 @@
                     </view>
                     <connections>
                         <outlet property="blurrOverlay" destination="0AU-ep-XZ7" id="r3g-dw-dbB"/>
+                        <outlet property="hamburgerButton" destination="9od-LE-8pU" id="O7M-Nh-l8h"/>
+                        <outlet property="hamburgerLeftConstraint" destination="26t-oE-zek" id="GLg-rw-Iku"/>
                         <outlet property="knowMoreButton" destination="QHT-dS-OiB" id="sDE-PK-Mhe"/>
                         <outlet property="nextView" destination="dRv-Wl-ERR" id="GYH-m4-3Go"/>
                         <outlet property="playButton" destination="Rhj-tt-Wk5" id="07K-9H-eH6"/>
@@ -195,6 +212,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="closeSideBar" width="51" height="50"/>
+        <image name="hamburger" width="41" height="27"/>
         <image name="launchScreenImage" width="266" height="400"/>
         <image name="notInWishlist" width="47" height="42"/>
         <image name="replay" width="36" height="34"/>

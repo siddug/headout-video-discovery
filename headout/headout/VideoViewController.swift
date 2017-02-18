@@ -11,6 +11,7 @@ import Player
 import YouTubePlayer
 import AVFoundation
 import SafariServices
+import FrostedSidebar
 
 class VideoViewController: UIViewController  {
     let player: Player = Player()
@@ -23,8 +24,12 @@ class VideoViewController: UIViewController  {
     @IBOutlet var blurrOverlay: UIView!
     @IBOutlet var nextView: UIView!
     
+    @IBOutlet var hamburgerButton: UIButton!
     @IBOutlet var wishButtonRightConstraint: NSLayoutConstraint!
     @IBOutlet var wishButtonTopConstraint: NSLayoutConstraint!
+    @IBOutlet var hamburgerLeftConstraint: NSLayoutConstraint!
+    
+    var frostedSidebar: SideBarViewController!
     
     @IBAction func knowMoreButtonTapped(_ sender: UIButton) {
         if let urlString = VideoPlayer.shared.getLinkUrl(), let url = URL.init(string: urlString) {
@@ -32,6 +37,23 @@ class VideoViewController: UIViewController  {
             webVC.delegate = self
             self.present(webVC, animated: true, completion: nil)
             player.pause()
+        }
+    }
+    
+    @IBAction func hamburgerButtonTapped(_ sender: UIButton) {
+        hamburgerButton.isSelected = !hamburgerButton.isSelected
+        if !hamburgerButton.isSelected {
+            hamburgerLeftConstraint.constant = UIConstants.leftSpaceForHamburger
+            frostedSidebar.dismissAnimated(true, completion: nil)
+        } else {
+            frostedSidebar.showInViewController( self, animated: true)
+            view.bringSubview(toFront: hamburgerButton)
+            hamburgerLeftConstraint.constant = SideBarConstants.width - hamburgerButton.bounds.width
+        }
+        UIView.animate(withDuration: UIConstants.wishListMovementInterval) { [weak self] in
+            guard let strongSelf = self else {return}
+            strongSelf.view.bringSubview(toFront: strongSelf.hamburgerButton)
+            strongSelf.view.layoutIfNeeded()
         }
     }
     
@@ -45,8 +67,6 @@ class VideoViewController: UIViewController  {
     }
     
     func removeOverlayViews() {
-        
-        
         wishButtonTopConstraint.constant = UIConstants.topSpaceForWishButton
         wishButtonRightConstraint.constant = UIConstants.rightSpaceForWishButton
         view.layoutIfNeeded()
@@ -88,12 +108,17 @@ class VideoViewController: UIViewController  {
     override func viewDidLoad() {
         super.viewDidLoad()
         addPlayer()
-        createBlurredView()
         addSideBar()
+        createBlurredView()
     }
 
     func addSideBar() {
-        
+        frostedSidebar = SideBarViewController.init(itemImages: SideBarConstants.imageArray, colors: SideBarConstants.colorArray, selectionStyle: .single)
+        //        var frostedSidebar: FrostedSidebar = FrostedSidebar(images: SideBarConstants.imageArray, colors: SideBarConstants.colorArray, selection
+        for (index, _) in SideBarConstants.imageArray.enumerated() {
+            frostedSidebar.actionForIndex[index] = { /* actions */ }
+        }
+        frostedSidebar.delegate = self
     }
     
     override func didReceiveMemoryWarning() {
@@ -187,9 +212,23 @@ extension VideoViewController: PlayerDelegate {
             strongSelf.nextView.alpha = 1.0
             strongSelf.playButton.alpha = 0
         }
-        // moveWishlistButton
     }
     
     func playerWillComeThroughLoop(_ player: Player) {}
+}
+
+// MARK:- Player Delegate
+extension VideoViewController: FrostedSidebarDelegate {
+    func sidebar(_ sidebar: FrostedSidebar, willShowOnScreenAnimated animated: Bool){}
+    func sidebar(_ sidebar: FrostedSidebar, didShowOnScreenAnimated animated: Bool){}
+    func sidebar(_ sidebar: FrostedSidebar, willDismissFromScreenAnimated animated: Bool) {
+        if hamburgerButton.isSelected && frostedSidebar.isCurrentlyOpen {
+            hamburgerButtonTapped(hamburgerButton)
+        }
+    }
+    
+    func sidebar(_ sidebar: FrostedSidebar, didDismissFromScreenAnimated animated: Bool){}
+    func sidebar(_ sidebar: FrostedSidebar, didTapItemAtIndex index: Int){}
+    func sidebar(_ sidebar: FrostedSidebar, didEnable itemEnabled: Bool, itemAtIndex index: Int){}
 }
 
