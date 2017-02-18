@@ -178,7 +178,7 @@
                                     <action selector="skipButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FkR-Rc-k79"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="launchScreenImage" translatesAutoresizingMaskIntoConstraints="NO" id="lCM-iN-Yta" userLabel="NoMoreBG">
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="launchScreenImage" translatesAutoresizingMaskIntoConstraints="NO" id="lCM-iN-Yta" userLabel="NoMoreBG">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
