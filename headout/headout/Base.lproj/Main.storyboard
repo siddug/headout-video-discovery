@@ -68,28 +68,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QHT-dS-OiB" customClass="RoundBlackButton" customModule="headout" customModuleProvider="target">
-                                <rect key="frame" x="112" y="677" width="190" height="42"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="190" id="VRy-9C-UTs"/>
-                                    <constraint firstAttribute="height" constant="42" id="VZd-C8-2bp"/>
-                                </constraints>
-                                <state key="normal" title="KNOW MORE"/>
-                                <connections>
-                                    <action selector="knowMoreButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iqx-RR-86s"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="60r-qX-W0u" customClass="RoundBlackButton" customModule="headout" customModuleProvider="target">
-                                <rect key="frame" x="372" y="677" width="63" height="42"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="63" id="9py-LB-XCQ"/>
-                                </constraints>
-                                <inset key="imageEdgeInsets" minX="-11" minY="7" maxX="0.0" maxY="7"/>
-                                <state key="normal" image="right-arrow"/>
-                                <connections>
-                                    <action selector="skipButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FkR-Rc-k79"/>
-                                </connections>
-                            </button>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0AU-ep-XZ7" userLabel="BlurrOverlay">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -155,6 +133,28 @@
                                 <state key="focused" image="wishlist"/>
                                 <connections>
                                     <action selector="wishlistButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RKd-sC-IYr"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QHT-dS-OiB" customClass="RoundBlackButton" customModule="headout" customModuleProvider="target">
+                                <rect key="frame" x="112" y="677" width="190" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="190" id="VRy-9C-UTs"/>
+                                    <constraint firstAttribute="height" constant="42" id="VZd-C8-2bp"/>
+                                </constraints>
+                                <state key="normal" title="KNOW MORE"/>
+                                <connections>
+                                    <action selector="knowMoreButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iqx-RR-86s"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="60r-qX-W0u" customClass="RoundBlackButton" customModule="headout" customModuleProvider="target">
+                                <rect key="frame" x="372" y="677" width="63" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="63" id="9py-LB-XCQ"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="-11" minY="7" maxX="0.0" maxY="7"/>
+                                <state key="normal" image="right-arrow"/>
+                                <connections>
+                                    <action selector="skipButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FkR-Rc-k79"/>
                                 </connections>
                             </button>
                         </subviews>
