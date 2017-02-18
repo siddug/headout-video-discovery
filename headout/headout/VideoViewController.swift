@@ -58,7 +58,7 @@ class VideoViewController: UIViewController  {
     }
     
     @IBAction func skipButtonTapped(_ sender: UIButton) {
-        VideoPlayer.shared.playPosition += 1
+        VideoPlayer.shared.playPosition = (VideoPlayer.shared.playPosition + 1) % VideoPlayer.shared.urlArray.count
         removeOverlayViews()
         if let urlString = VideoPlayer.shared.getVideoUrl(), let url = URL.init(string: urlString) {
             player.setUrl(url)
