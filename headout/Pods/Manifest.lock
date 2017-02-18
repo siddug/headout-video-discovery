@@ -1,9 +1,11 @@
 PODS:
+  - FrostedSidebar (1.0.0)
   - Player (0.3.0)
   - Spring (1.0.3)
   - YouTubePlayer (0.4.0)
 
 DEPENDENCIES:
+  - FrostedSidebar
   - Player
   - Spring (from `https://github.com/MengTo/Spring.git`, branch `swift3`)
   - YouTubePlayer
@@ -19,10 +21,11 @@ CHECKOUT OPTIONS:
     :git: https://github.com/MengTo/Spring.git
 
 SPEC CHECKSUMS:
+  FrostedSidebar: f86c6843cabd5d456f9234afb6eea22a7512532f
   Player: c577226ca6b9eefc9aa73d973dbc156ddd1bdc89
   Spring: 3f02b5dc3308572ef177b3cad0fa7bbc4b0706f7
   YouTubePlayer: 028451f6772f372d4759866db99824c676ac1473
 
-PODFILE CHECKSUM: 2be971b923d29550e1f6a9fc280cfdee86d23172
+PODFILE CHECKSUM: 8276d0ac44e6597cee82424172dbb3645c0ab80f
 
 COCOAPODS: 1.1.1

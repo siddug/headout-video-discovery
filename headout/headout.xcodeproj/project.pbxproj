@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		346945E51E57B1B6007722CF /* VideoPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346945E41E57B1B6007722CF /* VideoPlayer.swift */; };
+		346945EA1E57B877007722CF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346945E91E57B877007722CF /* Constants.swift */; };
+		346945ED1E57BF3D007722CF /* UILabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346945EC1E57BF3D007722CF /* UILabelExtension.swift */; };
+		346945EF1E57C012007722CF /* SpacedOutLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346945EE1E57C012007722CF /* SpacedOutLabel.swift */; };
+		346945F11E57C19C007722CF /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346945F01E57C19C007722CF /* LaunchViewController.swift */; };
+		346945F31E57C549007722CF /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346945F21E57C549007722CF /* Color.swift */; };
 		84BD4068D503EF30625F3F56 /* Pods_headout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6C20B71A5717D78F69FF83E /* Pods_headout.framework */; };
 		CDA185C21E570C4500A3D23B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA185C11E570C4500A3D23B /* AppDelegate.swift */; };
 		CDA185C41E570C4500A3D23B /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA185C31E570C4500A3D23B /* VideoViewController.swift */; };
@@ -50,6 +55,11 @@
 /* Begin PBXFileReference section */
 		164BFC1E1CD8D9B609B427A7 /* Pods_headoutTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_headoutTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		346945E41E57B1B6007722CF /* VideoPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoPlayer.swift; path = Models/VideoPlayer.swift; sourceTree = "<group>"; };
+		346945E91E57B877007722CF /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Utilities/Constants.swift; sourceTree = "<group>"; };
+		346945EC1E57BF3D007722CF /* UILabelExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UILabelExtension.swift; path = Extensions/UILabelExtension.swift; sourceTree = "<group>"; };
+		346945EE1E57C012007722CF /* SpacedOutLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpacedOutLabel.swift; path = Views/SpacedOutLabel.swift; sourceTree = "<group>"; };
+		346945F01E57C19C007722CF /* LaunchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LaunchViewController.swift; path = ViewControllers/LaunchViewController.swift; sourceTree = "<group>"; };
+		346945F21E57C549007722CF /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Color.swift; path = Utilities/Color.swift; sourceTree = "<group>"; };
 		38543CED441E477A599B74D8 /* Pods-headout.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-headout.debug.xcconfig"; path = "Pods/Target Support Files/Pods-headout/Pods-headout.debug.xcconfig"; sourceTree = "<group>"; };
 		3CC6699620CC1DB9EF5B70D2 /* Pods-headoutTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-headoutTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-headoutTests/Pods-headoutTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A655B459E493C1E151228809 /* Pods-headoutUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-headoutUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-headoutUITests/Pods-headoutUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -116,7 +126,6 @@
 			children = (
 				CDA185C81E570C4500A3D23B /* Assets.xcassets */,
 				CDA185CD1E570C4500A3D23B /* Info.plist */,
-				CDA186021E578C6B00A3D23B /* Fonts.swift */,
 			);
 			name = SupportingFiles;
 			sourceTree = "<group>";
@@ -132,6 +141,7 @@
 		346945E21E57B12D007722CF /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				346945EE1E57C012007722CF /* SpacedOutLabel.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -140,8 +150,27 @@
 			isa = PBXGroup;
 			children = (
 				CDA185C31E570C4500A3D23B /* VideoViewController.swift */,
+				346945F01E57C19C007722CF /* LaunchViewController.swift */,
 			);
 			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		346945E61E57B846007722CF /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				CDA186021E578C6B00A3D23B /* Fonts.swift */,
+				346945E91E57B877007722CF /* Constants.swift */,
+				346945F21E57C549007722CF /* Color.swift */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
+		346945EB1E57BF2A007722CF /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				346945EC1E57BF3D007722CF /* UILabelExtension.swift */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 		3F5EA02A19BD39D6E5849679 /* Pods */ = {
@@ -182,6 +211,8 @@
 		CDA185C01E570C4500A3D23B /* headout */ = {
 			isa = PBXGroup;
 			children = (
+				346945EB1E57BF2A007722CF /* Extensions */,
+				346945E61E57B846007722CF /* Utilities */,
 				346945E31E57B136007722CF /* ViewControllers */,
 				346945E21E57B12D007722CF /* Views */,
 				346945E11E57B124007722CF /* Models */,
@@ -529,10 +560,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				346945EA1E57B877007722CF /* Constants.swift in Sources */,
 				CDA185C41E570C4500A3D23B /* VideoViewController.swift in Sources */,
+				346945EF1E57C012007722CF /* SpacedOutLabel.swift in Sources */,
 				CDA186031E578C6C00A3D23B /* Fonts.swift in Sources */,
 				CDA185C21E570C4500A3D23B /* AppDelegate.swift in Sources */,
+				346945ED1E57BF3D007722CF /* UILabelExtension.swift in Sources */,
 				346945E51E57B1B6007722CF /* VideoPlayer.swift in Sources */,
+				346945F11E57C19C007722CF /* LaunchViewController.swift in Sources */,
+				346945F31E57C549007722CF /* Color.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

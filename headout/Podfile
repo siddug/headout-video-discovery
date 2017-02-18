@@ -7,6 +7,7 @@ target 'headout' do
 
 # UI
   pod 'Spring', :git => 'https://github.com/MengTo/Spring.git', :branch => 'swift3'
+  pod 'FrostedSidebar'
 # Networking
 #  pod 'AFNetworking'
 #  pod 'SwiftyJSON'

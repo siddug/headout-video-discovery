@@ -13,7 +13,15 @@ class VideoPlayer {
     
     fileprivate init() { }
     let urlArray = [
-        "http://res.cloudinary.com/dscs5qleu/video/upload/c_fill,h_1280,w_720/v1487353601/videoplayback_amdsji.mp4"
+        "http://res.cloudinary.com/dscs5qleu/video/upload/c_fill,h_1280,w_720/v1487353601/videoplayback_amdsji.mp4",
+        "http://res.cloudinary.com/dscs5qleu/video/upload/v1487373441/videoplayback_ui4yho.mp4",
+        "http://res.cloudinary.com/dscs5qleu/video/upload/c_fill,h_1280,w_720/v1487374531/videoplayback_obylet.mp4",
+        "http://res.cloudinary.com/dscs5qleu/video/upload/c_fill,h_1280,w_780/v1487374700/videoplayback_e3zvox.mp4",
+        "http://res.cloudinary.com/dscs5qleu/video/upload/c_fill,h_1280,w_720/v1487374852/videoplayback_rvhcga.mp4",
+        "http://res.cloudinary.com/dscs5qleu/video/upload/c_fill,g_center,h_1280,w_720/v1487375084/videoplayback_nsrxka.mp4",
+        "http://res.cloudinary.com/dscs5qleu/video/upload/c_fill,h_1280,w_720/v1487375265/videoplayback_naggi8.mp4",
+        "http://res.cloudinary.com/dscs5qleu/video/upload/c_fill,h_1280,w_720/v1487375655/videoplayback_tsrez2.mp4",
+        "http://res.cloudinary.com/dscs5qleu/video/upload/c_fill,h_1280,w_720/v1487375818/videoplayback_awa49f.mp4"
     ]
     
     var playPosition = 0

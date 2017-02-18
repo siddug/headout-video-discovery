@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -9,6 +9,51 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--View Controller-->
+        <scene sceneID="hOK-5H-nF4">
+            <objects>
+                <viewController id="TU7-aV-MvV" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="JYC-I2-ggk"/>
+                        <viewControllerLayoutGuide type="bottom" id="WvR-Hh-Oqx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lOd-6V-DhO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" alpha="0.2199999988079071" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launchScreenImage" translatesAutoresizingMaskIntoConstraints="NO" id="MVm-A4-3Ju">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HS8-Sm-KZT">
+                                <rect key="frame" x="177" y="113" width="60" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="hwL-bl-hgP"/>
+                                    <constraint firstAttribute="height" constant="55" id="x4H-fz-qHv"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r6j-Il-IHe" customClass="SpacedOutLabel" customModule="headout" customModuleProvider="target">
+                                <rect key="frame" x="186" y="201" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="HS8-Sm-KZT" firstAttribute="centerX" secondItem="lOd-6V-DhO" secondAttribute="centerX" id="2Y5-fZ-7Eq"/>
+                            <constraint firstItem="HS8-Sm-KZT" firstAttribute="top" secondItem="JYC-I2-ggk" secondAttribute="bottom" constant="93" id="Mps-ZV-gRK"/>
+                            <constraint firstItem="MVm-A4-3Ju" firstAttribute="width" secondItem="lOd-6V-DhO" secondAttribute="width" id="RP1-Pq-S6L"/>
+                            <constraint firstItem="MVm-A4-3Ju" firstAttribute="centerX" secondItem="lOd-6V-DhO" secondAttribute="centerX" id="bnM-92-hSf"/>
+                            <constraint firstItem="MVm-A4-3Ju" firstAttribute="height" secondItem="lOd-6V-DhO" secondAttribute="height" id="f7I-1R-Son"/>
+                            <constraint firstItem="MVm-A4-3Ju" firstAttribute="centerY" secondItem="lOd-6V-DhO" secondAttribute="centerY" id="uUL-Uc-SEd"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RF7-yl-gCa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-265" y="54"/>
+        </scene>
         <!--Video View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -18,13 +63,17 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="625" y="54"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="launchScreenImage" width="266" height="400"/>
+    </resources>
 </document>
