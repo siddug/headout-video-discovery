@@ -68,11 +68,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0AU-ep-XZ7" userLabel="BlurrOverlay">
+                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0AU-ep-XZ7" userLabel="BlurrOverlay">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rhj-tt-Wk5" customClass="RoundBlackButton" customModule="headout" customModuleProvider="target">
+                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rhj-tt-Wk5" customClass="RoundBlackButton" customModule="headout" customModuleProvider="target">
                                 <rect key="frame" x="137" y="298.66666666666669" width="140" height="140"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Rhj-tt-Wk5" secondAttribute="height" multiplier="1:1" id="fs5-zB-Yzg"/>
@@ -83,7 +83,7 @@
                                     <action selector="playButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="R1s-7K-4TS"/>
                                 </connections>
                             </button>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dRv-Wl-ERR" userLabel="NextView">
+                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dRv-Wl-ERR" userLabel="NextView">
                                 <rect key="frame" x="0.0" y="303.33333333333331" width="414" height="130"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tFi-dD-XZR" customClass="BaseButton" customModule="headout" customModuleProvider="target">

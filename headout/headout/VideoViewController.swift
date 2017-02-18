@@ -45,15 +45,16 @@ class VideoViewController: UIViewController  {
     }
     
     func removeOverlayViews() {
-        blurrOverlay.isHidden = true
-        nextView.isHidden = true
-        playButton.isHidden = true
+        
         
         wishButtonTopConstraint.constant = UIConstants.topSpaceForWishButton
         wishButtonRightConstraint.constant = UIConstants.rightSpaceForWishButton
+        view.layoutIfNeeded()
         UIView.animate(withDuration: UIConstants.wishListMovementInterval) { [weak self] in
             guard let strongSelf = self else {return}
-            strongSelf.view.layoutIfNeeded()
+            strongSelf.blurrOverlay.alpha = 0
+            strongSelf.nextView.alpha = 0
+            strongSelf.playButton.alpha = 0
         }
     }
     
@@ -88,8 +89,13 @@ class VideoViewController: UIViewController  {
         super.viewDidLoad()
         addPlayer()
         createBlurredView()
+        addSideBar()
     }
 
+    func addSideBar() {
+        
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -126,8 +132,15 @@ class VideoViewController: UIViewController  {
     
     func playerTap (_ sender: UITapGestureRecognizer) {
         player.pause()
-        blurrOverlay.isHidden = false
-        playButton.isHidden = false
+        view.layoutIfNeeded()
+        UIView.animate(withDuration: UIConstants.wishListMovementInterval) { [weak self] in
+            guard let strongSelf = self else {return}
+            strongSelf.blurrOverlay.alpha = 1.0
+            strongSelf.playButton.alpha = 1.0
+            strongSelf.nextView.alpha = 0
+        }
+//        blurrOverlay.isHidden = false
+//        playButton.isHidden = false
     }
 }
 
@@ -165,13 +178,14 @@ extension VideoViewController: PlayerDelegate {
     
     func playerPlaybackDidEnd(_ player: Player) {
         print("playback end")
-        blurrOverlay.isHidden = false
-        nextView.isHidden = false
         wishButtonTopConstraint.constant = nextView.frame.minY + replayButton.frame.minY - UIConstants.offsetForTopConstraint
         wishButtonRightConstraint.constant = nextView.frame.minX + nextView.center.x - UIConstants.centerDiffForReplayButtons + wishlistButton.bounds.width / 2
+        view.layoutIfNeeded()
         UIView.animate(withDuration: UIConstants.wishListMovementInterval) { [weak self] in
             guard let strongSelf = self else {return}
-            strongSelf.view.layoutIfNeeded()
+            strongSelf.blurrOverlay.alpha = 1.0
+            strongSelf.nextView.alpha = 1.0
+            strongSelf.playButton.alpha = 0
         }
         // moveWishlistButton
     }
