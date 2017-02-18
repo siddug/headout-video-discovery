@@ -13,7 +13,7 @@ import AVFoundation
 import SafariServices
 import FrostedSidebar
 
-class VideoViewController: UIViewController  {
+class VideoViewController: BaseViewController  {
     let player: Player = Player()
     
     @IBOutlet var lastPageLabel: UILabel!
@@ -40,7 +40,7 @@ class VideoViewController: UIViewController  {
         if let urlString = VideoPlayer.shared.getLinkUrl(), let url = URL.init(string: urlString) {
             let webVC = SFSafariViewController.init(url: url)
             webVC.delegate = self
-            self.present(webVC, animated: true, completion: nil)
+            present(webVC, animated: true, completion: nil)
             player.pause()
         }
     }
@@ -83,6 +83,9 @@ class VideoViewController: UIViewController  {
     }
     
     @IBAction func playButtonTapped(_ sender: UIButton) {
+        if nextView.alpha != 0.0 {
+            return
+        }
         removeOverlayViews()
         player.playFromCurrentTime()
     }
@@ -108,6 +111,15 @@ class VideoViewController: UIViewController  {
         addPlayer()
         addSideBar()
         createBlurredView()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        playButtonTapped(playButton)
+    }
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        playerTap(nil)
     }
 
     func addSideBar() {
@@ -168,6 +180,9 @@ class VideoViewController: UIViewController  {
     }
     
     func playerTap (_ sender: UITapGestureRecognizer?) {
+        if (nextView.alpha != 0.0) {
+            return
+        }
         player.pause()
         view.layoutIfNeeded()
         UIView.animate(withDuration: UIConstants.wishListMovementInterval) { [weak self] in

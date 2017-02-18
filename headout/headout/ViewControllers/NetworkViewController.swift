@@ -1,5 +1,5 @@
 //
-//  LaunchViewController.swift
+//  NetworkViewController.swift
 //  headout
 //
 //  Created by varun jindal on 18/02/17.
@@ -8,11 +8,23 @@
 
 import UIKit
 
-class LaunchViewController: UIViewController {
+class NetworkViewController: BaseViewController {
 
-    @IBOutlet var welcomeLabel: SpacedOutLabel!
+    @IBOutlet var wifiIcon: UIImageView!
+    @IBOutlet var wifiConnectionLabel: SpacedOutLabel!
+    
+    var isWifiAvailable = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        if isWifiAvailable {
+            wifiIcon.isHighlighted = false
+            wifiConnectionLabel.text = Strings.wifiAvailable
+        } else {
+            wifiIcon.isHighlighted = true
+            wifiConnectionLabel.text = Strings.wifiUnavailable
+        }
+        
 
         // Do any additional setup after loading the view.
     }

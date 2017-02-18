@@ -11,10 +11,13 @@
 		346945EA1E57B877007722CF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346945E91E57B877007722CF /* Constants.swift */; };
 		346945ED1E57BF3D007722CF /* UILabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346945EC1E57BF3D007722CF /* UILabelExtension.swift */; };
 		346945EF1E57C012007722CF /* SpacedOutLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346945EE1E57C012007722CF /* SpacedOutLabel.swift */; };
-		346945F11E57C19C007722CF /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346945F01E57C19C007722CF /* LaunchViewController.swift */; };
 		346945F31E57C549007722CF /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346945F21E57C549007722CF /* Color.swift */; };
 		346945F51E57CA1B007722CF /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346945F41E57CA1B007722CF /* Images.swift */; };
 		3499611C1E5859AA008937CB /* SideBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3499611B1E5859AA008937CB /* SideBarViewController.swift */; };
+		3499611E1E587D64008937CB /* NetworkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3499611D1E587D63008937CB /* NetworkViewController.swift */; };
+		349961201E587DC8008937CB /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3499611F1E587DC8008937CB /* BaseViewController.swift */; };
+		349961221E587F1B008937CB /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349961211E587F1B008937CB /* Reachability.swift */; };
+		349961241E5880BC008937CB /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349961231E5880BC008937CB /* Strings.swift */; };
 		34D9B8791E57CDAB0073DE57 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D9B8781E57CDAB0073DE57 /* RoundedButton.swift */; };
 		34D9B87B1E57CDEB0073DE57 /* RoundBlackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D9B87A1E57CDEB0073DE57 /* RoundBlackButton.swift */; };
 		34D9B87D1E57D3E20073DE57 /* BaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D9B87C1E57D3E20073DE57 /* BaseButton.swift */; };
@@ -64,10 +67,13 @@
 		346945E91E57B877007722CF /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Utilities/Constants.swift; sourceTree = "<group>"; };
 		346945EC1E57BF3D007722CF /* UILabelExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UILabelExtension.swift; path = Extensions/UILabelExtension.swift; sourceTree = "<group>"; };
 		346945EE1E57C012007722CF /* SpacedOutLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpacedOutLabel.swift; path = Views/SpacedOutLabel.swift; sourceTree = "<group>"; };
-		346945F01E57C19C007722CF /* LaunchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LaunchViewController.swift; path = ViewControllers/LaunchViewController.swift; sourceTree = "<group>"; };
 		346945F21E57C549007722CF /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Color.swift; path = Utilities/Color.swift; sourceTree = "<group>"; };
 		346945F41E57CA1B007722CF /* Images.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Images.swift; path = Utilities/Images.swift; sourceTree = "<group>"; };
 		3499611B1E5859AA008937CB /* SideBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SideBarViewController.swift; path = Custom/SideBarViewController.swift; sourceTree = "<group>"; };
+		3499611D1E587D63008937CB /* NetworkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetworkViewController.swift; path = ViewControllers/NetworkViewController.swift; sourceTree = "<group>"; };
+		3499611F1E587DC8008937CB /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseViewController.swift; path = ViewControllers/BaseViewController.swift; sourceTree = "<group>"; };
+		349961211E587F1B008937CB /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Reachability.swift; path = Custom/Reachability.swift; sourceTree = "<group>"; };
+		349961231E5880BC008937CB /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Strings.swift; path = Utilities/Strings.swift; sourceTree = "<group>"; };
 		34D9B8781E57CDAB0073DE57 /* RoundedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RoundedButton.swift; path = Views/RoundedButton.swift; sourceTree = "<group>"; };
 		34D9B87A1E57CDEB0073DE57 /* RoundBlackButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RoundBlackButton.swift; path = Views/RoundBlackButton.swift; sourceTree = "<group>"; };
 		34D9B87C1E57D3E20073DE57 /* BaseButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseButton.swift; path = Views/BaseButton.swift; sourceTree = "<group>"; };
@@ -166,7 +172,8 @@
 			isa = PBXGroup;
 			children = (
 				CDA185C31E570C4500A3D23B /* VideoViewController.swift */,
-				346945F01E57C19C007722CF /* LaunchViewController.swift */,
+				3499611D1E587D63008937CB /* NetworkViewController.swift */,
+				3499611F1E587DC8008937CB /* BaseViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -178,6 +185,7 @@
 				346945E91E57B877007722CF /* Constants.swift */,
 				346945F21E57C549007722CF /* Color.swift */,
 				346945F41E57CA1B007722CF /* Images.swift */,
+				349961231E5880BC008937CB /* Strings.swift */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -194,6 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				3499611B1E5859AA008937CB /* SideBarViewController.swift */,
+				349961211E587F1B008937CB /* Reachability.swift */,
 			);
 			name = Custom;
 			sourceTree = "<group>";
@@ -592,14 +601,17 @@
 				CDA185C41E570C4500A3D23B /* VideoViewController.swift in Sources */,
 				346945EF1E57C012007722CF /* SpacedOutLabel.swift in Sources */,
 				CDA186031E578C6C00A3D23B /* Fonts.swift in Sources */,
+				349961201E587DC8008937CB /* BaseViewController.swift in Sources */,
 				CDA185C21E570C4500A3D23B /* AppDelegate.swift in Sources */,
 				346945ED1E57BF3D007722CF /* UILabelExtension.swift in Sources */,
 				34D9B8791E57CDAB0073DE57 /* RoundedButton.swift in Sources */,
 				346945E51E57B1B6007722CF /* VideoPlayer.swift in Sources */,
 				3499611C1E5859AA008937CB /* SideBarViewController.swift in Sources */,
 				346945F51E57CA1B007722CF /* Images.swift in Sources */,
-				346945F11E57C19C007722CF /* LaunchViewController.swift in Sources */,
+				349961241E5880BC008937CB /* Strings.swift in Sources */,
 				34D9B87B1E57CDEB0073DE57 /* RoundBlackButton.swift in Sources */,
+				3499611E1E587D64008937CB /* NetworkViewController.swift in Sources */,
+				349961221E587F1B008937CB /* Reachability.swift in Sources */,
 				346945F31E57C549007722CF /* Color.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

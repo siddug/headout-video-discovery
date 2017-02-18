@@ -15,6 +15,7 @@ struct VideoConstants {
 
 struct LabelConstants {
     static let characterSpacing: CGFloat = 7
+    static let paraSpacing: CGFloat = 15
 }
 
 struct UIConstants {
